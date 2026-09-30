@@ -1,0 +1,17 @@
+[
+  "Proposal leaves accepted calendar unchanged",
+  "Draft can be edited in place",
+  "Confirmation applies proposal",
+  "Calendar selection preserves unsent composer text",
+  "Selection scopes language command",
+  "Partial record awards action XP",
+  "Replan schedules remaining 25 minutes",
+  "Evidence is rendered as text",
+  "Repeated evidence does not duplicate XP",
+  "Simulated verification advances mastery separately",
+  "Manual conflicting edit is rejected",
+  "Manual valid creation works",
+  "Drag creates a proposal",
+  "Drag waits for confirmation",
+  "No viewport horizontal overflow"
+]

@@ -1,0 +1,1 @@
+{"method":"Focus target in browser, send actual Enter through agent-browser, inspect document.activeElement","results":["Calendar event Enter focuses editor title input","Growth navigation Enter focuses h1","Growth node Enter preserves focus on selected node"],"passed":true}

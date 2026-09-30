@@ -49,3 +49,7 @@ NHS Gary running self-report; World Athletics Kipchoge Berlin 2022 2:01:09; Karp
 ## Accessibility & Inclusion
 
 Desktop and mobile; keyboard access, labeled fields, visible focus, sufficient contrast, reduced motion, no color-only state.
+
+## Accepted refinement, 2026-09-30
+
+User prefers C's evidence workshop plus A's explicit capability map and quantified gaps. The new entry is a single shared daily workspace: editable calendar, contextual conversation, visible proposals, progress evidence and state-dependent next actions. Original 15 views remain at variants.html for comparison. This revision is a bounded local simulation, not a claim of Agent Native runtime or model integration.
