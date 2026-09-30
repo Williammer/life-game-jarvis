@@ -273,20 +273,21 @@ components:
 
 **Creative North Star: "Jarvis daily workspace — C 证据工坊 × A 成长图谱"**
 
-The user explicitly prefers C’s evidence workshop with A’s capability graph and quantified gaps. The default `index.html` now brings calendar editing, contextual conversation, reviewable proposals and progress evidence into one daily workspace. C supplies the slate, ink and emerald document character; A supplies the visible capability topology. This is an accepted prototype direction, not approval of a production identity or runtime integration.
+The user explicitly prefers C’s evidence workshop with A’s capability graph and quantified gaps. The default `index.html` now opens a unified module overview, with shared module details and the daily calendar available from the same shell. Calendar editing, contextual conversation, reviewable proposals and progress evidence remain one connected workspace. C supplies the slate, ink and emerald document character; A supplies the visible capability topology. This is an accepted prototype direction, not approval of a production identity or runtime integration.
 
-The original fifteen A/B/C views remain at `variants.html`, backed by `app.js`, `styles.css` and `model.js`. Their palettes and signature structures remain valid historical comparison material. They do not require the new workspace to keep its calendar, conversation and graph in separate candidate worlds. Current composition is recorded in `.impeccable/surfaces/agent-day.md`; `.impeccable/surfaces/game-lab.md` records the earlier comparison phase, including its then-pending preference verdict.
+The original fifteen A/B/C views remain at `variants.html`, backed by `app.js`, `styles.css` and `model.js`. Their palettes and signature structures remain valid historical comparison material. They do not require the new workspace to keep its calendar, conversation and graph in separate candidate worlds. The current module composition is recorded in `.impeccable/surfaces/module-atlas.md`; `.impeccable/surfaces/agent-day.md` records the earlier daily refinement, and `.impeccable/surfaces/game-lab.md` records the original comparison phase, including its then-pending preference verdict.
 
 **Key Characteristics:**
 
 - C’s pale slate, white paper, ink blue and evidence green anchor the default workspace.
 - A’s capability topology connects an explicit gap to a proposed daily action.
+- Shared module ledgers and evidence documents keep standing, comparable gaps and stage routes legible across different growth directions.
 - Calendar and conversation share the selected object; proposed changes remain visibly distinct from accepted time.
 - Chinese system typography, compact supporting text and tabular quantities support an operational surface.
 - Text accompanies event and evidence states; controls retain visible keyboard focus.
 - CSS and inline SVG carry the visuals; no raster assets, external fonts or new dependencies ship.
 
-Evidence: `index.html`, `day.css`, `day.js`, `day-model.js`, inherited `styles.css`, `PRODUCT.md`, both surface briefs, and the desktop/mobile workspace and growth captures under `.impeccable/review-v2/`. This record describes the built local simulation. The separate finish review owns its verdict.
+Evidence: `index.html`, `day.css`, `day.js`, `day-model.js`, `module-ui.js`, `modules.css`, inherited `styles.css`, `PRODUCT.md`, the three surface briefs, earlier workspace captures under `.impeccable/review-v2/`, and the eight desktop/mobile module captures under `.impeccable/review-modules/`. This record describes the built local simulation. The separate finish review owns its verdict.
 
 ## Colors
 
@@ -300,7 +301,7 @@ The default workspace retains C’s emerald action accent and slate reading pale
 ### Secondary
 
 - **Calendar states:** `day-fixed-*` marks fixed time in blue; `day-quest-*` marks growth tasks in green; `day-draft-*` marks proposed changes in warm paper with a dashed border. `day-conflict-*` marks collisions; `day-complete-*` marks recorded completion. `day-unchanged` and its line color mute copied events in the proposal lane, with `c-muted` text.
-- **Route ochre** (`day-route`): dashed capability connections in the current growth map. Historical A retains its own `a-warm` route and chapter color.
+- **Route ochre** (`day-route`): dashed capability connections in the earlier daily growth map; the module roadmap uses slate rules and emerald completed markers. Historical A retains its own `a-warm` route and chapter color.
 - **Now marker** (`day-now`): the thin red simulated-current-time rule and circular endpoint.
 - **Negative state** (`a-negative`): the inherited error/withdrawal token remains shared; local inline and proposal error colors are implementation-specific variants.
 
@@ -326,20 +327,25 @@ Display, body and controls use the native Chinese stack in frontmatter with no n
 - **Conversation:** 13px/1.85 for intent and chat copy; mobile intent/chat copy becomes 12px. The composer uses 13px/1.75, and the latest reply uses 12px/1.8. Paragraphs inherit the 72ch cap.
 - **Actions:** the shared button base remains 14px/600; most daily-panel actions override it to 12px. Quick actions and footer controls use 11px.
 - **Quantities:** gap values are 23px/650 with -.035em tracking; evidence and proposal totals are 20px/650, with proposal totals reducing to 18px on mobile.
+- **Module hierarchy:** detail titles use 28px, reducing to 24px at 850px; overview module names use 21px. Standing values use 32px/650 with 1.2 line height and -.035em tracking, reducing to 29px at 850px. These are module-surface measurements, not replacement global type tokens.
 - **Local metadata:** 10–12px appears in timeline labels, event time text, node status and mode notes. These compact exceptions describe the current prototype; they are not an app-wide small-text recommendation.
 
 Unprefixed display/title/body-copy and chapter-spine tokens preserve the original variants: their page heading uses `clamp(28px,3.2vw,46px)`, 29px at the historical narrow breakpoint; original chapter headings use 30px/25px. No above-heading decorative eyebrow is a reusable heading pattern. The native display stack is recorded as the accepted operational prototype choice, not a production display-font endorsement.
 
 ## Layout
 
-The daily header is 74px tall with 30px inline padding. `.day-shell` stops at 1580px and uses `24px 26px 35px` padding. The desktop workspace grid is `208px minmax(390px,1fr) 355px` with 20px gaps: growth rail, calendar, conversation. Evidence sits below on a matching `208px 1fr` grid. The growth page uses `minmax(0,1.7fr) minmax(290px,1fr)` with a 28px gap; its canvas padding is 25px.
+The daily header is 74px tall with 30px inline padding. `.day-shell` stops at 1580px and uses `24px 26px 35px` padding. The desktop workspace grid is `208px minmax(390px,1fr) 355px` with 20px gaps: growth rail, calendar, conversation. Evidence sits below on a matching `208px 1fr` grid. The earlier daily growth-page composition used `minmax(0,1.7fr) minmax(290px,1fr)` with a 28px gap and 25px canvas padding; the module overview and detail below now occupy this destination.
 
 - At 1600px and above, the workspace becomes `220px minmax(480px,1fr) 375px`.
 - At 1250px and below, the rail hides; the workspace becomes `minmax(390px,1fr) 340px`, evidence becomes one column, shell gutters become 22px, and the calendar viewport grows from 588px to 620px.
-- At 850px and below, the header becomes 64px tall, the shell uses `20px 16px 28px`, and the workspace stacks with conversation before the full-width calendar. The calendar viewport is 520px; a proposal action links down to it. Growth becomes one column with 20px canvas padding. The full map remains accessible through navigation when the rail is hidden.
+- At 850px and below, the header becomes 64px tall, the shell uses `20px 16px 28px`, and the workspace stacks with conversation before the full-width calendar. The calendar viewport is 520px; a proposal action links down to it. The earlier growth canvas stacked into one column with 20px padding. The current 成长总览 navigation keeps all modules accessible when the daily rail is hidden.
 - The calendar’s 08:00–22:00 timeline is 1008px tall: 28 half-hour rows at 36px, 72px per hour, and a 46px time gutter. A proposal adds a second equal-width lane beside the current arrangement. The viewport scrolls independently and preserves position through rerenders.
 - The conversation uses 18px content padding, 16px on mobile. Optional history is capped at 240px, 170px on mobile; mobile proposal changes are capped at 180px. Calendar editing uses two native time fields in an equal-column grid with a 12px gap.
-- The capability map is 310px tall, with percentage-positioned nodes and a dashed inline-SVG path. Measured-gap rows use `100px 1fr 68px`, becoming `90px 1fr 65px` on mobile.
+- The earlier capability map is 310px tall, with percentage-positioned nodes and a dashed inline-SVG path. Measured-gap rows use `100px 1fr 68px`, becoming `90px 1fr 65px` on mobile.
+
+The module overview uses one ruled white ledger with four columns: direction, standing, upcoming work and horizons, and exemplar gap. Above 1200px its columns are `1.05fr .65fr 1.25fr 1.1fr`, with 30px gaps and 26px inline padding; rows use 29px block padding. At 1200px the gaps and padding reduce. At 850px the header row hides and modules become labeled two-column sections; at 440px the identity/standing pair remains above full-width work and comparison sections. This is the accepted module composition, not a requirement for every future screen.
+
+Module detail places one evidence document beside a 360px Jarvis column with a 24px gap, reducing to 330px/20px at 1200px. Document padding steps from 28px to 23px to 20px. The three-stage roadmap becomes one column at 1200px; metric bars hide there while values, units and percentages remain. At 850px, explicit “模块与路线” / “与 Jarvis 讨论” controls show one pane at a time. Opening a module defaults to its document; analysis and reference-discussion actions open Jarvis. Selected pane buttons use `aria-pressed`, emerald fill and a 42px minimum height.
 
 Historical variants retain their own layouts: a 1440px header/navigation and 1352px main shell; A’s route/chapter, B’s deck/ledger and C’s 245px dossier/document split; breakpoints at 1450px, 1100px, 800px and 520px; and the fixed comparison switcher. These rules apply at `variants.html`, not as a template for the default workspace.
 
@@ -377,7 +383,7 @@ The conversation composer has a `day-input-line` border, 8px corners and 10px pa
 
 ### Navigation
 
-The daily header has two text controls, 今日 and 成长地图. The active page uses emerald text, a 2px underline, weight 650 and `aria-current="page"`. On mobile, the controls have a 44px minimum height and the long desktop status is hidden. The footer links to the original variants; the fixed A/B/C switcher belongs only to those original views.
+The daily header has two text controls, 今日 and 成长总览. The initial view is the module overview; module detail adds a return-to-overview control and a native module selector. The active page uses emerald text, a 2px underline, weight 650 and `aria-current="page"`. On mobile, the controls have a 44px minimum height and the long desktop status is hidden. The footer links to the original variants; the fixed A/B/C switcher belongs only to those original views.
 
 ### Tags and Status
 
@@ -393,11 +399,23 @@ Fixed, quest, proposed, conflict, completed and unchanged events use the extract
 
 An empty half-hour slot is a real button. Hover adds a pale green fill and “添加事项”; keyboard focus also highlights the slot. Dragging an accepted event creates a proposal, while the native editor provides an explicit confirmation path. Draft conflicts surface explanatory text and disable acceptance; the visual contract is review before a proposal takes effect. Event state styles follow the actual cascade: completed styling follows conflict styling, and unchanged styling is appended last. This record does not invent precedence beyond the code.
 
-### Capability Topology and Gaps
+### Earlier Capability Topology and Gaps
 
-The current map uses selectable nodes with written simulated/pending evidence status, `12px 16px` padding, a 116px minimum width and 67px minimum height. At 850px the final width minimum is 96px and padding is 10px. The detail area states a concrete missing capability and offers an action that brings a proposal into the daily workspace. Measurement comparisons use 8px bars; the rail’s coverage segments are 6px. Numerical gaps retain their own units and sources instead of being converted into one mastery score.
+The earlier daily map uses selectable nodes with written simulated/pending evidence status, `12px 16px` padding, a 116px minimum width and 67px minimum height. At 850px the final width minimum is 96px and padding is 10px. The detail area states a concrete missing capability and offers an action that brings a proposal into the daily workspace. Measurement comparisons use 8px bars; the rail’s coverage segments are 6px. Numerical gaps retain their own units and sources instead of being converted into one mastery score.
 
-The sidecar previews ten current primitives and signatures. Historical frontmatter components remain available as a record of the original variants; their A references are not the default workspace palette. Color ramps in the sidecar are synthesized preview metadata, not shipped tokens or newly approved colors.
+### Module Ledger, Evidence and Routes
+
+The overview and every module detail share data-driven renderers. The ledger and detail surfaces reuse white paper, fine slate rules and 10px corners; horizontal divisions group content without adding a separate card to every metric. Underlined emerald module names open the shared document. Standing has a prominent tabular value, a written evidence-coverage caption and a narrow bar; missing evidence displays 待评估 or 未知. The displayed 0–100 scale is relative to each module’s own target, not a cross-domain ranking. Action XP stays separate.
+
+The document orders current evidence, exemplar comparison and a near/mid/long route. Metric rows retain source/evidence text and target units. Native disclosures hold scoring basis and confidence. Exemplars have a public-source link, a specific claim and a written comparability limit. A comparison bar describes only that metric or checklist. Roadmap stages use a fine top rule and circular marker; emerald fill accompanies the written simulated-completion state. Scheduling a stage task creates a calendar proposal that still requires confirmation.
+
+### Module Discussion and Confirmation
+
+The contextual Jarvis work surface reuses the existing composer and divided panel treatment. A module proposal shows its basis, target, standing, coverage, comparable gap and horizons before the explicit 确认采用 / 暂不采用 actions. Reference changes show before/after names; confidence and missing information stay visible or available through disclosure. Stale proposals show explanatory text and disable acceptance. Confirmation updates the module while preserving accepted calendar time and action XP.
+
+New-module input starts with an intention and an unknown standing; pausing/restoring a module preserves history. The overview’s native action-growth disclosure keeps level, XP and the simulated reward separate from the evidence-derived module assessment. All personal values and Jarvis analyses remain local fiction; the shipped UI does not establish a real research or Agent runtime.
+
+The sidecar retains ten primitive/signature previews and records the accepted module patterns in its extension metadata. Earlier capability-node previews retain their historical daily-refinement scope. Historical frontmatter components remain available as a record of the original variants; their A references are not the default workspace palette. Color ramps in the sidecar are synthesized preview metadata, not shipped tokens or newly approved colors.
 
 ## Do's and Don'ts
 
@@ -416,4 +434,4 @@ The sidecar previews ten current primitives and signatures. Historical frontmatt
 - Don’t introduce external fonts or raster imagery into this record; neither ships in the prototype.
 - Don’t turn compact 10px metadata or removed decorative heading badges into general-purpose typography patterns.
 
-Not canonized or repaired here: compact 10–11px metadata remains a local legibility ceiling; the overridden body declaration and incidental tone/size differences are documented without normalizing implementation. Historical typography exceptions remain scoped to the original variants. The existing detector’s 52 advisory / 0 primary findings are not retroactively cleared by recording the accepted refinement; finish review and production approval remain separate.
+Not canonized or repaired here: compact 9–11px metadata remains a local legibility ceiling; the overridden body declaration and incidental tone/size differences are documented without normalizing implementation. Historical typography exceptions remain scoped to the original variants. The earlier daily artifact’s recorded 52 advisory / 0 primary detector findings are not a fresh module result and are not retroactively cleared by this record; finish review and production approval remain separate.

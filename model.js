@@ -38,7 +38,7 @@ export function progression(s) {
   const skills=['计算图解释'];
   if(proven('build')) skills.push('反向传播实现');
   if(proven('review') && proven('build')) skills.push('数值检查');
-  return { xp, total:s.historyXP+xp, level:Math.floor((s.historyXP+xp)/100)+1, skills, completed:records.filter(r=>r.status==='done').length, partial:records.filter(r=>r.status==='partial').length, eligible:xp>=60 && skills.length>=2, gap:s.marathon-7269 };
+  return { xp, total:s.historyXP+xp, level:Math.floor((s.historyXP+xp)/100)+1, skills, completed:records.filter(r=>r.status==='done').length, partial:records.filter(r=>r.status==='partial').length, eligible:xp>=60 && (s.moduleTaskIds?s.moduleTaskIds.some(proven):skills.length>=2), gap:s.marathon-7269 };
 }
 export function act(state, action) {
   const s=structuredClone(state); s.notice='';

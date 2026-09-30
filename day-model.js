@@ -28,7 +28,8 @@ export function parse(text,s){text=String(text).trim().slice(0,5000);const norma
     if(d<15)result.questions.push('缩短后少于 15 分钟。要改成 15 分钟，还是取消这项？');
     else{result.move={id:selected.id,start:selected.start,end:selected.start+d};result.recognized=true;}return result;
   }
-  const progressId=taskFrom(text);
+  const namedTask=s.moduleRoutes?.flatMap(r=>r.taskIds).find(id=>text.includes(task(id).name));
+  const progressId=selected?.taskId||namedTask||taskFrom(text);
   if(progressId&&/完成|做了|做完|搞定|跑通|没做完|没跑通|没完成/.test(text)&&!/想|计划|希望/.test(text)){
     result.progress={id:progressId,status:/没(?:有)?完成|没做完|没跑通|部分|只做|还没|失败/.test(text)?'partial':'done',minutes:duration(normalized)||task(progressId).minutes,evidence:text,proof:'self'};result.recognized=true;return result;
   }
@@ -74,10 +75,14 @@ export function propose(s,extraction={},reason='按今天的约束重新安排',
   if(extraction.remove)events=events.filter(e=>e.id!==extraction.remove);
   if(extraction.move){const orig=baseEvents.find(e=>e.id===extraction.move.id);if(orig){events=events.filter(e=>e.id!==orig.id);events.push({...orig,...extraction.move});}}
   const health=ctx.fatigue?'recover':'run';const ai=s.core.records.build?.status==='done'&&s.core.records.build?.proof==='checked'?'review':focus==='read'?'read':'build';
-  const ids=[ai,health,'family'];if(focus==='review'&&!ids.includes('review'))ids.unshift('review');
+  const ids=s.moduleRoutes?s.moduleRoutes.map(r=>{
+    const requested=r.taskIds.find(id=>extraction.taskIds?.includes(id));
+    return requested||(ctx.fatigue&&r.fatigueTaskId)||[r.defaultTaskId,...r.taskIds].find(id=>s.core.records[id]?.status!=='done')||r.defaultTaskId;
+  }):[ai,health,'family'];if(extraction.taskIds)ids.unshift(...extraction.taskIds);else if(!s.moduleRoutes&&focus==='review'&&!ids.includes('review'))ids.unshift('review');
   const notes=[...(extraction.notes||[])],deferred=[];let used=events.filter(e=>e.taskId&&s.core.records[e.taskId]?.status!=='done').reduce((n,e)=>n+e.end-e.start,0),energy=events.filter(e=>e.taskId&&s.core.records[e.taskId]?.status!=='done').reduce((n,e)=>n+task(e.taskId).energy,0);
   for(const id of [...new Set(ids)]){
     const t=task(id),record=s.core.records[id];if(record?.status==='done'||events.some(e=>e.taskId===id)||baseEvents.some(e=>e.id===extraction.remove&&e.taskId===id))continue;
+    if(s.moduleRoutes&&!s.moduleRoutes.some(r=>r.taskIds.includes(id)))continue;
     const needed=record?.status==='partial'?Math.max(15,t.minutes-record.minutes):t.minutes;
     if(used+needed>ctx.budget||energy+t.energy>ctx.energy){deferred.push(`${t.name}：超过今天的时间或精力上限`);continue;}
     const preferred=id==='family'?1110:id==='recover'||id==='run'?1020:660;
@@ -86,7 +91,7 @@ export function propose(s,extraction={},reason='按今天的约束重新安排',
     events.push({id:`quest-${id}`,taskId:id,title:t.name,start:slot[0],end:slot[1],kind:'quest'});used+=needed;energy+=t.energy;
   }
   notes.unshift(ctx.fatigue?'你提到疲劳：优先尝试恢复任务，保留调整权。':'未标记疲劳：把轻松活动作为候选，不自动提升健康指标。');
-  notes.push(ai==='review'?'已有模拟实现证据，下一步补数值验证。':ai==='read'?'按你优先补概念的意愿，安排一段能留下解释的阅读。':'目前缺少可运行实现的证据，先保护一段实践时间；不把阅读与实践机械五五分。');
+  if(s.moduleRoutes)notes.push('按启用模块的下一任务与现有证据排入空档；现状分、榜样与日历共享模块身份。');else notes.push(ai==='review'?'已有模拟实现证据，下一步补数值验证。':ai==='read'?'按你优先补概念的意愿，安排一段能留下解释的阅读。':'目前缺少可运行实现的证据，先保护一段实践时间；不把阅读与实践机械五五分。');
   if(s.core.records[ai]?.status==='partial')notes.push('已做过的部分保留，本次只安排剩余时间。');
   return {baseRevision,events:events.sort((a,b)=>a.start-b.start),context:{...currentDraft?.context,...extraction.context},focus,reason,notes,deferred,questions:extraction.questions||[],used,energy,source:extraction.source||'local'};
 }
@@ -98,6 +103,7 @@ export function record(s,draft,checked=false){const next=clone(s);if(!draft||!ta
 export function nextAction(s){const p=progression(s.core);if(s.proposal)return {title:proposalIssues(s).length?'先解决这份提案中的问题':'看一眼改动，再确认入历',text:proposalIssues(s).join('；')||'日历右侧是草案，左侧仍是当前安排。'};
   const next=s.events.filter(e=>e.taskId&&s.core.records[e.taskId]?.status!=='done').sort((a,b)=>a.start-b.start)[0];
   if(next){const t=task(next.taskId),r=s.core.records[t.id];return {title:r?'从上次的检查点继续':`下一步：${t.name}`,text:`${clock(next.start)} · ${next.end-next.start} 分钟。${r?`已记录：${r.evidence}`:t.standard}`,event:next};}
+  if(s.moduleRoutes&&p.completed)return {title:'进展已记录，可以回看模块总览',text:'任务的行动 XP 与模块现状分分别计算；自述完成后仍可补能力证据。'};
   if(p.completed)return {title:p.skills.length<2?'行动完成了，再补一条能力证据':'新的路标已开放',text:p.skills.length<2?'可以先结束今天。之后再验收实现，不会因为有 XP 就自动点亮能力。':'实现已通过模拟验收。下一次的实践可以聚焦数值检查与失败案例。'};
   return {title:'把今天交给一段描述',text:'我会结合固定事项、身体感受与证据缺口，把具体建议排进空档。'};
 }

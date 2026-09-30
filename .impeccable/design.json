@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-30T15:27:25.760598+00:00",
+  "generatedAt": "2026-09-30T16:02:59.173559+00:00",
   "title": "Design System: Jarvis — daily workspace and original variants",
   "extensions": {
     "colorMeta": {
@@ -1176,6 +1176,62 @@
       {
         "name": "day-stack-max",
         "value": "850px"
+      },
+      {
+        "name": "module-compact-max",
+        "value": "1200px"
+      },
+      {
+        "name": "module-pane-max",
+        "value": "850px"
+      },
+      {
+        "name": "module-narrow-max",
+        "value": "440px"
+      }
+    ],
+    "acceptedSurfacePatterns": [
+      {
+        "name": "Unified module ledger and shared detail",
+        "surface": ".impeccable/surfaces/module-atlas.md",
+        "sources": [
+          "module-ui.js",
+          "modules.css",
+          "day.js"
+        ],
+        "conceptSeed": {
+          "value": "c93ce131",
+          "status": "inherited from the game-lab contract; no new roll"
+        },
+        "world": "Existing C slate/ink/emerald evidence workshop with A quantitative gaps and progression; no token replacement.",
+        "patterns": [
+          {
+            "name": "Module ledger",
+            "description": "One ruled white comparison surface for direction, module-relative standing and coverage, tasks and horizons, and exemplar gap. Unknown remains written; XP stays separate.",
+            "responsive": "Four columns above 850px; labeled two-column module sections at 850px; work and comparison span the row at 440px."
+          },
+          {
+            "name": "Evidence and route document",
+            "description": "Shared renderer orders current evidence, sourced exemplar comparison and near/mid/long route. Values keep units and comparability limits; native disclosures hold scoring basis.",
+            "responsive": "Document plus 360px Jarvis column, 330px at 1200px. Roadmap stacks and metric bars hide at 1200px while written values remain."
+          },
+          {
+            "name": "Contextual proposal and mobile panes",
+            "description": "Jarvis proposals expose assessment, evidence coverage, gap and horizons before confirmation; stale proposals disable acceptance. Module/document and Jarvis discussion are explicit mobile panes.",
+            "responsive": "At 850px only the selected pane displays. Module opening selects the document; analysis or reference discussion selects Jarvis. Pane buttons use aria-pressed."
+          }
+        ],
+        "evidence": [
+          ".impeccable/review-modules/overview-desktop.png",
+          ".impeccable/review-modules/overview-mobile.png",
+          ".impeccable/review-modules/agent-desktop.png",
+          ".impeccable/review-modules/agent-mobile.png",
+          ".impeccable/review-modules/agent-route-mobile.png",
+          ".impeccable/review-modules/running-desktop.png",
+          ".impeccable/review-modules/running-mobile.png",
+          ".impeccable/review-modules/running-route-mobile.png"
+        ],
+        "scope": "Accepted local interaction prototype; personal values and analyses are fictional. Real research, model inference and Agent runtime are unimplemented."
       }
     ]
   },
@@ -1216,8 +1272,8 @@
       "name": "Daily navigation",
       "kind": "nav",
       "refersTo": "day-navigation",
-      "description": "Two current-page destinations; the historical switcher is separate.",
-      "html": "<nav class=\"ds-nav\" aria-label=\"主导航\"><button class=\"ds-active\" aria-current=\"page\">今日</button><button>成长地图</button></nav>",
+      "description": "Shared daily/module navigation; the module overview is the initial view and the historical variant switcher stays separate.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"主导航\"><button class=\"ds-active\" aria-current=\"page\">今日</button><button>成长总览</button></nav>",
       "css": ".ds-nav{display:flex;gap:25px;background:#fff;height:74px}.ds-nav button{font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;border:0;border-bottom:2px solid transparent;background:transparent;font-size:14px;color:var(--ink,#243c50);cursor:pointer;transition:background-color 160ms ease-out,border-color 160ms ease-out}.ds-nav .ds-active{border-bottom-color:#176552;color:#176552;font-weight:650}.ds-nav button:focus-visible{outline:3px solid var(--accent,#176552);outline-offset:4px}@media(max-width:850px){.ds-nav{gap:18px;height:64px}.ds-nav button{min-height:44px}}@media(prefers-reduced-motion:reduce){.ds-nav button{transition:none}}"
     },
     {
@@ -1256,17 +1312,18 @@
       "name": "Selected capability node",
       "kind": "custom",
       "refersTo": "day-capability-node",
-      "description": "A topology expressed with the current C palette and flat selection outline.",
+      "description": "Earlier daily-refinement topology preview, preserved as history; current growth navigation opens the module ledger and shared detail.",
       "html": "<div class=\"ds-map\"><button class=\"ds-node ds-selected\"><strong>反向传播实现</strong><small>待验证</small></button></div>",
       "css": ".ds-map{position:relative;height:150px;background:#edf5f4;border:1px solid #c9dcd6;border-radius:8px}.ds-node{font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:12px 16px;min-width:116px;min-height:67px;border:1px solid #a8c3b6;border-radius:7px;background:white;color:var(--ink,#243c50);text-align:left;font-size:13px;cursor:pointer;transition:background-color 160ms ease-out,border-color 160ms ease-out}.ds-node:focus-visible{outline:3px solid var(--accent,#176552);outline-offset:4px}.ds-node.ds-selected{outline:2px solid #176552;outline-offset:2px}.ds-node strong,.ds-node small{display:block}.ds-node small{font-size:11px;color:#50677a;margin-top:5px}@media(max-width:850px){.ds-node{min-width:96px;padding:10px}.ds-node strong{font-size:12px}.ds-node small{font-size:10px}}@media(prefers-reduced-motion:reduce){.ds-node{transition:none}}"
     }
   ],
   "narrative": {
     "northStar": "Jarvis daily workspace — C 证据工坊 × A 成长图谱",
-    "overview": "The user explicitly prefers C’s evidence workshop with A’s capability graph and quantified gaps. The default `index.html` now brings calendar editing, contextual conversation, reviewable proposals and progress evidence into one daily workspace. C supplies the slate, ink and emerald document character; A supplies the visible capability topology. This is an accepted prototype direction, not approval of a production identity or runtime integration.\n\nThe original fifteen A/B/C views remain at `variants.html`, backed by `app.js`, `styles.css` and `model.js`. Their palettes and signature structures remain valid historical comparison material. They do not require the new workspace to keep its calendar, conversation and graph in separate candidate worlds. Current composition is recorded in `.impeccable/surfaces/agent-day.md`; `.impeccable/surfaces/game-lab.md` records the earlier comparison phase, including its then-pending preference verdict.",
+    "overview": "The user explicitly prefers C’s evidence workshop with A’s capability graph and quantified gaps. The default `index.html` now opens a unified module overview, with shared module details and the daily calendar available from the same shell. Calendar editing, contextual conversation, reviewable proposals and progress evidence remain one connected workspace. C supplies the slate, ink and emerald document character; A supplies the visible capability topology. This is an accepted prototype direction, not approval of a production identity or runtime integration.\n\nThe original fifteen A/B/C views remain at `variants.html`, backed by `app.js`, `styles.css` and `model.js`. Their palettes and signature structures remain valid historical comparison material. They do not require the new workspace to keep its calendar, conversation and graph in separate candidate worlds. The current module composition is recorded in `.impeccable/surfaces/module-atlas.md`; `.impeccable/surfaces/agent-day.md` records the earlier daily refinement, and `.impeccable/surfaces/game-lab.md` records the original comparison phase, including its then-pending preference verdict.",
     "keyCharacteristics": [
       "C’s pale slate, white paper, ink blue and evidence green anchor the default workspace.",
       "A’s capability topology connects an explicit gap to a proposed daily action.",
+      "Shared module ledgers and evidence documents keep standing, comparable gaps and stage routes legible across different growth directions.",
       "Calendar and conversation share the selected object; proposed changes remain visibly distinct from accepted time.",
       "Chinese system typography, compact supporting text and tabular quantities support an operational surface.",
       "Text accompanies event and evidence states; controls retain visible keyboard focus.",

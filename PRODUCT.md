@@ -53,3 +53,7 @@ Desktop and mobile; keyboard access, labeled fields, visible focus, sufficient c
 ## Accepted refinement, 2026-09-30
 
 User prefers C's evidence workshop plus A's explicit capability map and quantified gaps. The new entry is a single shared daily workspace: editable calendar, contextual conversation, visible proposals, progress evidence and state-dependent next actions. Original 15 views remain at variants.html for comparison. This revision is a bounded local simulation, not a claim of Agent Native runtime or model integration.
+
+## Module management refinement
+
+User requests a unified, extensible module overview: current standing, near-term tasks, medium/long planning, discussable exemplars and a road to match. Goals and quantitative gaps are analyzed and proposed by Jarvis from context/evidence; the person supplies observations and discusses/approves, not a manual scoring designer. This prototype uses explicit simulated analysis, unknown-state handling and reusable module data rather than hard-coded module layouts.
