@@ -1,0 +1,771 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-30T14:41:43.073960Z",
+  "title": "Design System: Jarvis prototype lab — candidate worlds",
+  "extensions": {
+    "colorMeta": {
+      "a-bg": {
+        "role": "neutral",
+        "displayName": "A Bg",
+        "canonical": "#eef4f4",
+        "tonalRamp": [
+          "oklch(15.00% 0.00638 197.05)",
+          "oklch(26.43% 0.00638 197.05)",
+          "oklch(37.86% 0.00638 197.05)",
+          "oklch(49.29% 0.00638 197.05)",
+          "oklch(60.71% 0.00638 197.05)",
+          "oklch(72.14% 0.00638 197.05)",
+          "oklch(83.57% 0.00638 197.05)",
+          "oklch(95.00% 0.00638 197.05)"
+        ]
+      },
+      "a-paper": {
+        "role": "neutral",
+        "displayName": "A Paper",
+        "canonical": "#fffefa",
+        "tonalRamp": [
+          "oklch(15.00% 0.00537 95.10)",
+          "oklch(26.43% 0.00537 95.10)",
+          "oklch(37.86% 0.00537 95.10)",
+          "oklch(49.29% 0.00537 95.10)",
+          "oklch(60.71% 0.00537 95.10)",
+          "oklch(72.14% 0.00537 95.10)",
+          "oklch(83.57% 0.00537 95.10)",
+          "oklch(95.00% 0.00537 95.10)"
+        ]
+      },
+      "a-ink": {
+        "role": "neutral",
+        "displayName": "A Ink",
+        "canonical": "#18383e",
+        "tonalRamp": [
+          "oklch(15.00% 0.03898 211.35)",
+          "oklch(26.43% 0.03898 211.35)",
+          "oklch(37.86% 0.03898 211.35)",
+          "oklch(49.29% 0.03898 211.35)",
+          "oklch(60.71% 0.03898 211.35)",
+          "oklch(72.14% 0.03898 211.35)",
+          "oklch(83.57% 0.03898 211.35)",
+          "oklch(95.00% 0.03898 211.35)"
+        ]
+      },
+      "a-muted": {
+        "role": "neutral",
+        "displayName": "A Muted",
+        "canonical": "#49676b",
+        "tonalRamp": [
+          "oklch(15.00% 0.03554 206.38)",
+          "oklch(26.43% 0.03554 206.38)",
+          "oklch(37.86% 0.03554 206.38)",
+          "oklch(49.29% 0.03554 206.38)",
+          "oklch(60.71% 0.03554 206.38)",
+          "oklch(72.14% 0.03554 206.38)",
+          "oklch(83.57% 0.03554 206.38)",
+          "oklch(95.00% 0.03554 206.38)"
+        ]
+      },
+      "a-accent": {
+        "role": "primary",
+        "displayName": "A Accent",
+        "canonical": "#17616a",
+        "tonalRamp": [
+          "oklch(15.00% 0.07011 207.12)",
+          "oklch(26.43% 0.07011 207.12)",
+          "oklch(37.86% 0.07011 207.12)",
+          "oklch(49.29% 0.07011 207.12)",
+          "oklch(60.71% 0.07011 207.12)",
+          "oklch(72.14% 0.07011 207.12)",
+          "oklch(83.57% 0.07011 207.12)",
+          "oklch(95.00% 0.07011 207.12)"
+        ]
+      },
+      "a-soft": {
+        "role": "neutral",
+        "displayName": "A Soft",
+        "canonical": "#d9e9e9",
+        "tonalRamp": [
+          "oklch(15.00% 0.01702 196.86)",
+          "oklch(26.43% 0.01702 196.86)",
+          "oklch(37.86% 0.01702 196.86)",
+          "oklch(49.29% 0.01702 196.86)",
+          "oklch(60.71% 0.01702 196.86)",
+          "oklch(72.14% 0.01702 196.86)",
+          "oklch(83.57% 0.01702 196.86)",
+          "oklch(95.00% 0.01702 196.86)"
+        ]
+      },
+      "a-line": {
+        "role": "neutral",
+        "displayName": "A Line",
+        "canonical": "#bccfce",
+        "tonalRamp": [
+          "oklch(15.00% 0.02061 192.93)",
+          "oklch(26.43% 0.02061 192.93)",
+          "oklch(37.86% 0.02061 192.93)",
+          "oklch(49.29% 0.02061 192.93)",
+          "oklch(60.71% 0.02061 192.93)",
+          "oklch(72.14% 0.02061 192.93)",
+          "oklch(83.57% 0.02061 192.93)",
+          "oklch(95.00% 0.02061 192.93)"
+        ]
+      },
+      "a-warm": {
+        "role": "secondary",
+        "displayName": "A Warm",
+        "canonical": "#8b5511",
+        "tonalRamp": [
+          "oklch(15.00% 0.10463 65.55)",
+          "oklch(26.43% 0.10463 65.55)",
+          "oklch(37.86% 0.10463 65.55)",
+          "oklch(49.29% 0.10463 65.55)",
+          "oklch(60.71% 0.10463 65.55)",
+          "oklch(72.14% 0.10463 65.55)",
+          "oklch(83.57% 0.10463 65.55)",
+          "oklch(95.00% 0.10463 65.55)"
+        ]
+      },
+      "a-positive": {
+        "role": "secondary",
+        "displayName": "A Positive",
+        "canonical": "#246646",
+        "tonalRamp": [
+          "oklch(15.00% 0.08536 158.99)",
+          "oklch(26.43% 0.08536 158.99)",
+          "oklch(37.86% 0.08536 158.99)",
+          "oklch(49.29% 0.08536 158.99)",
+          "oklch(60.71% 0.08536 158.99)",
+          "oklch(72.14% 0.08536 158.99)",
+          "oklch(83.57% 0.08536 158.99)",
+          "oklch(95.00% 0.08536 158.99)"
+        ]
+      },
+      "a-negative": {
+        "role": "secondary",
+        "displayName": "A Negative",
+        "canonical": "#9f3434",
+        "tonalRamp": [
+          "oklch(15.00% 0.14220 24.16)",
+          "oklch(26.43% 0.14220 24.16)",
+          "oklch(37.86% 0.14220 24.16)",
+          "oklch(49.29% 0.14220 24.16)",
+          "oklch(60.71% 0.14220 24.16)",
+          "oklch(72.14% 0.14220 24.16)",
+          "oklch(83.57% 0.14220 24.16)",
+          "oklch(95.00% 0.14220 24.16)"
+        ]
+      },
+      "b-bg": {
+        "role": "neutral",
+        "displayName": "B Bg",
+        "canonical": "#f1edf4",
+        "tonalRamp": [
+          "oklch(15.00% 0.01021 311.18)",
+          "oklch(26.43% 0.01021 311.18)",
+          "oklch(37.86% 0.01021 311.18)",
+          "oklch(49.29% 0.01021 311.18)",
+          "oklch(60.71% 0.01021 311.18)",
+          "oklch(72.14% 0.01021 311.18)",
+          "oklch(83.57% 0.01021 311.18)",
+          "oklch(95.00% 0.01021 311.18)"
+        ]
+      },
+      "b-paper": {
+        "role": "neutral",
+        "displayName": "B Paper",
+        "canonical": "#fffcff",
+        "tonalRamp": [
+          "oklch(15.00% 0.00504 325.61)",
+          "oklch(26.43% 0.00504 325.61)",
+          "oklch(37.86% 0.00504 325.61)",
+          "oklch(49.29% 0.00504 325.61)",
+          "oklch(60.71% 0.00504 325.61)",
+          "oklch(72.14% 0.00504 325.61)",
+          "oklch(83.57% 0.00504 325.61)",
+          "oklch(95.00% 0.00504 325.61)"
+        ]
+      },
+      "b-ink": {
+        "role": "neutral",
+        "displayName": "B Ink",
+        "canonical": "#382640",
+        "tonalRamp": [
+          "oklch(15.00% 0.05147 315.05)",
+          "oklch(26.43% 0.05147 315.05)",
+          "oklch(37.86% 0.05147 315.05)",
+          "oklch(49.29% 0.05147 315.05)",
+          "oklch(60.71% 0.05147 315.05)",
+          "oklch(72.14% 0.05147 315.05)",
+          "oklch(83.57% 0.05147 315.05)",
+          "oklch(95.00% 0.05147 315.05)"
+        ]
+      },
+      "b-muted": {
+        "role": "neutral",
+        "displayName": "B Muted",
+        "canonical": "#68566f",
+        "tonalRamp": [
+          "oklch(15.00% 0.04515 316.46)",
+          "oklch(26.43% 0.04515 316.46)",
+          "oklch(37.86% 0.04515 316.46)",
+          "oklch(49.29% 0.04515 316.46)",
+          "oklch(60.71% 0.04515 316.46)",
+          "oklch(72.14% 0.04515 316.46)",
+          "oklch(83.57% 0.04515 316.46)",
+          "oklch(95.00% 0.04515 316.46)"
+        ]
+      },
+      "b-accent": {
+        "role": "primary",
+        "displayName": "B Accent",
+        "canonical": "#654078",
+        "tonalRamp": [
+          "oklch(15.00% 0.09834 313.35)",
+          "oklch(26.43% 0.09834 313.35)",
+          "oklch(37.86% 0.09834 313.35)",
+          "oklch(49.29% 0.09834 313.35)",
+          "oklch(60.71% 0.09834 313.35)",
+          "oklch(72.14% 0.09834 313.35)",
+          "oklch(83.57% 0.09834 313.35)",
+          "oklch(95.00% 0.09834 313.35)"
+        ]
+      },
+      "b-soft": {
+        "role": "neutral",
+        "displayName": "B Soft",
+        "canonical": "#e4d9eb",
+        "tonalRamp": [
+          "oklch(15.00% 0.02695 312.57)",
+          "oklch(26.43% 0.02695 312.57)",
+          "oklch(37.86% 0.02695 312.57)",
+          "oklch(49.29% 0.02695 312.57)",
+          "oklch(60.71% 0.02695 312.57)",
+          "oklch(72.14% 0.02695 312.57)",
+          "oklch(83.57% 0.02695 312.57)",
+          "oklch(95.00% 0.02695 312.57)"
+        ]
+      },
+      "b-line": {
+        "role": "neutral",
+        "displayName": "B Line",
+        "canonical": "#cbbcd1",
+        "tonalRamp": [
+          "oklch(15.00% 0.03333 316.40)",
+          "oklch(26.43% 0.03333 316.40)",
+          "oklch(37.86% 0.03333 316.40)",
+          "oklch(49.29% 0.03333 316.40)",
+          "oklch(60.71% 0.03333 316.40)",
+          "oklch(72.14% 0.03333 316.40)",
+          "oklch(83.57% 0.03333 316.40)",
+          "oklch(95.00% 0.03333 316.40)"
+        ]
+      },
+      "b-warm": {
+        "role": "secondary",
+        "displayName": "B Warm",
+        "canonical": "#825317",
+        "tonalRamp": [
+          "oklch(15.00% 0.09546 67.62)",
+          "oklch(26.43% 0.09546 67.62)",
+          "oklch(37.86% 0.09546 67.62)",
+          "oklch(49.29% 0.09546 67.62)",
+          "oklch(60.71% 0.09546 67.62)",
+          "oklch(72.14% 0.09546 67.62)",
+          "oklch(83.57% 0.09546 67.62)",
+          "oklch(95.00% 0.09546 67.62)"
+        ]
+      },
+      "b-positive": {
+        "role": "secondary",
+        "displayName": "B Positive",
+        "canonical": "#316747",
+        "tonalRamp": [
+          "oklch(15.00% 0.07824 155.70)",
+          "oklch(26.43% 0.07824 155.70)",
+          "oklch(37.86% 0.07824 155.70)",
+          "oklch(49.29% 0.07824 155.70)",
+          "oklch(60.71% 0.07824 155.70)",
+          "oklch(72.14% 0.07824 155.70)",
+          "oklch(83.57% 0.07824 155.70)",
+          "oklch(95.00% 0.07824 155.70)"
+        ]
+      },
+      "c-bg": {
+        "role": "neutral",
+        "displayName": "C Bg",
+        "canonical": "#eaf0f4",
+        "tonalRamp": [
+          "oklch(15.00% 0.00839 236.56)",
+          "oklch(26.43% 0.00839 236.56)",
+          "oklch(37.86% 0.00839 236.56)",
+          "oklch(49.29% 0.00839 236.56)",
+          "oklch(60.71% 0.00839 236.56)",
+          "oklch(72.14% 0.00839 236.56)",
+          "oklch(83.57% 0.00839 236.56)",
+          "oklch(95.00% 0.00839 236.56)"
+        ]
+      },
+      "c-paper": {
+        "role": "neutral",
+        "displayName": "C Paper",
+        "canonical": "#fff",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
+        ]
+      },
+      "c-ink": {
+        "role": "neutral",
+        "displayName": "C Ink",
+        "canonical": "#243c50",
+        "tonalRamp": [
+          "oklch(15.00% 0.04624 244.84)",
+          "oklch(26.43% 0.04624 244.84)",
+          "oklch(37.86% 0.04624 244.84)",
+          "oklch(49.29% 0.04624 244.84)",
+          "oklch(60.71% 0.04624 244.84)",
+          "oklch(72.14% 0.04624 244.84)",
+          "oklch(83.57% 0.04624 244.84)",
+          "oklch(95.00% 0.04624 244.84)"
+        ]
+      },
+      "c-muted": {
+        "role": "neutral",
+        "displayName": "C Muted",
+        "canonical": "#50677a",
+        "tonalRamp": [
+          "oklch(15.00% 0.04100 243.62)",
+          "oklch(26.43% 0.04100 243.62)",
+          "oklch(37.86% 0.04100 243.62)",
+          "oklch(49.29% 0.04100 243.62)",
+          "oklch(60.71% 0.04100 243.62)",
+          "oklch(72.14% 0.04100 243.62)",
+          "oklch(83.57% 0.04100 243.62)",
+          "oklch(95.00% 0.04100 243.62)"
+        ]
+      },
+      "c-accent": {
+        "role": "primary",
+        "displayName": "C Accent",
+        "canonical": "#176552",
+        "tonalRamp": [
+          "oklch(15.00% 0.07964 172.38)",
+          "oklch(26.43% 0.07964 172.38)",
+          "oklch(37.86% 0.07964 172.38)",
+          "oklch(49.29% 0.07964 172.38)",
+          "oklch(60.71% 0.07964 172.38)",
+          "oklch(72.14% 0.07964 172.38)",
+          "oklch(83.57% 0.07964 172.38)",
+          "oklch(95.00% 0.07964 172.38)"
+        ]
+      },
+      "c-soft": {
+        "role": "neutral",
+        "displayName": "C Soft",
+        "canonical": "#dceee5",
+        "tonalRamp": [
+          "oklch(15.00% 0.02251 164.50)",
+          "oklch(26.43% 0.02251 164.50)",
+          "oklch(37.86% 0.02251 164.50)",
+          "oklch(49.29% 0.02251 164.50)",
+          "oklch(60.71% 0.02251 164.50)",
+          "oklch(72.14% 0.02251 164.50)",
+          "oklch(83.57% 0.02251 164.50)",
+          "oklch(95.00% 0.02251 164.50)"
+        ]
+      },
+      "c-line": {
+        "role": "neutral",
+        "displayName": "C Line",
+        "canonical": "#bdced7",
+        "tonalRamp": [
+          "oklch(15.00% 0.02237 230.60)",
+          "oklch(26.43% 0.02237 230.60)",
+          "oklch(37.86% 0.02237 230.60)",
+          "oklch(49.29% 0.02237 230.60)",
+          "oklch(60.71% 0.02237 230.60)",
+          "oklch(72.14% 0.02237 230.60)",
+          "oklch(83.57% 0.02237 230.60)",
+          "oklch(95.00% 0.02237 230.60)"
+        ]
+      },
+      "c-warm": {
+        "role": "secondary",
+        "displayName": "C Warm",
+        "canonical": "#865419",
+        "tonalRamp": [
+          "oklch(15.00% 0.09747 65.56)",
+          "oklch(26.43% 0.09747 65.56)",
+          "oklch(37.86% 0.09747 65.56)",
+          "oklch(49.29% 0.09747 65.56)",
+          "oklch(60.71% 0.09747 65.56)",
+          "oklch(72.14% 0.09747 65.56)",
+          "oklch(83.57% 0.09747 65.56)",
+          "oklch(95.00% 0.09747 65.56)"
+        ]
+      },
+      "c-positive": {
+        "role": "secondary",
+        "displayName": "C Positive",
+        "canonical": "#176552",
+        "tonalRamp": [
+          "oklch(15.00% 0.07964 172.38)",
+          "oklch(26.43% 0.07964 172.38)",
+          "oklch(37.86% 0.07964 172.38)",
+          "oklch(49.29% 0.07964 172.38)",
+          "oklch(60.71% 0.07964 172.38)",
+          "oklch(72.14% 0.07964 172.38)",
+          "oklch(83.57% 0.07964 172.38)",
+          "oklch(95.00% 0.07964 172.38)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "white",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
+        ]
+      },
+      "a-map": {
+        "role": "neutral",
+        "displayName": "A Map",
+        "canonical": "#e3eeee",
+        "tonalRamp": [
+          "oklch(15.00% 0.01171 196.96)",
+          "oklch(26.43% 0.01171 196.96)",
+          "oklch(37.86% 0.01171 196.96)",
+          "oklch(49.29% 0.01171 196.96)",
+          "oklch(60.71% 0.01171 196.96)",
+          "oklch(72.14% 0.01171 196.96)",
+          "oklch(83.57% 0.01171 196.96)",
+          "oklch(95.00% 0.01171 196.96)"
+        ]
+      },
+      "b-selected-card": {
+        "role": "neutral",
+        "displayName": "B Selected Card",
+        "canonical": "#f9f3fc",
+        "tonalRamp": [
+          "oklch(15.00% 0.01346 314.76)",
+          "oklch(26.43% 0.01346 314.76)",
+          "oklch(37.86% 0.01346 314.76)",
+          "oklch(49.29% 0.01346 314.76)",
+          "oklch(60.71% 0.01346 314.76)",
+          "oklch(72.14% 0.01346 314.76)",
+          "oklch(83.57% 0.01346 314.76)",
+          "oklch(95.00% 0.01346 314.76)"
+        ]
+      },
+      "b-note-copy": {
+        "role": "neutral",
+        "displayName": "B Note Copy",
+        "canonical": "#eadfec",
+        "tonalRamp": [
+          "oklch(15.00% 0.02102 320.99)",
+          "oklch(26.43% 0.02102 320.99)",
+          "oklch(37.86% 0.02102 320.99)",
+          "oklch(49.29% 0.02102 320.99)",
+          "oklch(60.71% 0.02102 320.99)",
+          "oklch(72.14% 0.02102 320.99)",
+          "oklch(83.57% 0.02102 320.99)",
+          "oklch(95.00% 0.02102 320.99)"
+        ]
+      },
+      "chrome-bg": {
+        "role": "neutral",
+        "displayName": "Chrome Bg",
+        "canonical": "#202e36",
+        "tonalRamp": [
+          "oklch(15.00% 0.02386 233.70)",
+          "oklch(26.43% 0.02386 233.70)",
+          "oklch(37.86% 0.02386 233.70)",
+          "oklch(49.29% 0.02386 233.70)",
+          "oklch(60.71% 0.02386 233.70)",
+          "oklch(72.14% 0.02386 233.70)",
+          "oklch(83.57% 0.02386 233.70)",
+          "oklch(95.00% 0.02386 233.70)"
+        ]
+      },
+      "chrome-text": {
+        "role": "neutral",
+        "displayName": "Chrome Text",
+        "canonical": "#f7fafb",
+        "tonalRamp": [
+          "oklch(15.00% 0.00346 219.53)",
+          "oklch(26.43% 0.00346 219.53)",
+          "oklch(37.86% 0.00346 219.53)",
+          "oklch(49.29% 0.00346 219.53)",
+          "oklch(60.71% 0.00346 219.53)",
+          "oklch(72.14% 0.00346 219.53)",
+          "oklch(83.57% 0.00346 219.53)",
+          "oklch(95.00% 0.00346 219.53)"
+        ]
+      },
+      "chrome-line": {
+        "role": "neutral",
+        "displayName": "Chrome Line",
+        "canonical": "#50616b",
+        "tonalRamp": [
+          "oklch(15.00% 0.02630 233.89)",
+          "oklch(26.43% 0.02630 233.89)",
+          "oklch(37.86% 0.02630 233.89)",
+          "oklch(49.29% 0.02630 233.89)",
+          "oklch(60.71% 0.02630 233.89)",
+          "oklch(72.14% 0.02630 233.89)",
+          "oklch(83.57% 0.02630 233.89)",
+          "oklch(95.00% 0.02630 233.89)"
+        ]
+      },
+      "chrome-selected-bg": {
+        "role": "neutral",
+        "displayName": "Chrome Selected Bg",
+        "canonical": "#f5f9fa",
+        "tonalRamp": [
+          "oklch(15.00% 0.00446 214.33)",
+          "oklch(26.43% 0.00446 214.33)",
+          "oklch(37.86% 0.00446 214.33)",
+          "oklch(49.29% 0.00446 214.33)",
+          "oklch(60.71% 0.00446 214.33)",
+          "oklch(72.14% 0.00446 214.33)",
+          "oklch(83.57% 0.00446 214.33)",
+          "oklch(95.00% 0.00446 214.33)"
+        ]
+      },
+      "chrome-selected-text": {
+        "role": "neutral",
+        "displayName": "Chrome Selected Text",
+        "canonical": "#203e48",
+        "tonalRamp": [
+          "oklch(15.00% 0.03982 221.65)",
+          "oklch(26.43% 0.03982 221.65)",
+          "oklch(37.86% 0.03982 221.65)",
+          "oklch(49.29% 0.03982 221.65)",
+          "oklch(60.71% 0.03982 221.65)",
+          "oklch(72.14% 0.03982 221.65)",
+          "oklch(83.57% 0.03982 221.65)",
+          "oklch(95.00% 0.03982 221.65)"
+        ]
+      },
+      "chrome-hover-line": {
+        "role": "neutral",
+        "displayName": "Chrome Hover Line",
+        "canonical": "#849ba5",
+        "tonalRamp": [
+          "oklch(15.00% 0.02987 225.93)",
+          "oklch(26.43% 0.02987 225.93)",
+          "oklch(37.86% 0.02987 225.93)",
+          "oklch(49.29% 0.02987 225.93)",
+          "oklch(60.71% 0.02987 225.93)",
+          "oklch(72.14% 0.02987 225.93)",
+          "oklch(83.57% 0.02987 225.93)",
+          "oklch(95.00% 0.02987 225.93)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page headings in the current three-candidate prototype; production identity pending."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Shared section headings with documented signature overrides."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Task and record titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Inherited native Chinese reading stack and line height."
+      },
+      "body-copy": {
+        "displayName": "Body Copy",
+        "purpose": "Explicit 14px explanatory copy."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Compact metadata and status labels."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Shared primary, secondary and text actions."
+      },
+      "chapter-spine": {
+        "displayName": "Chapter Spine",
+        "purpose": "A-only vertical chapter marker; hidden below 520px."
+      }
+    },
+    "shadows": [
+      {
+        "name": "a-map-node",
+        "value": "0 4px 12px #0000000b",
+        "purpose": "Resting route destination."
+      },
+      {
+        "name": "a-map-node-selected",
+        "value": "0 5px 18px #00000018",
+        "purpose": "Selected route destination."
+      },
+      {
+        "name": "prototype-switcher",
+        "value": "0 8px 30px #00000030",
+        "purpose": "Fixed lab comparison chrome."
+      }
+    ],
+    "motion": [
+      {
+        "name": "button-state",
+        "value": "background-color 160ms ease-out,border-color 160ms ease-out",
+        "purpose": "Existing button state transition; disabled under prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide-min",
+        "value": "1450px"
+      },
+      {
+        "name": "compact-max",
+        "value": "1100px"
+      },
+      {
+        "name": "stack-max",
+        "value": "800px"
+      },
+      {
+        "name": "narrow-max",
+        "value": "520px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Shared action; active candidate variables replace the A preview fallback.",
+      "html": "<button class=\"ds-button ds-primary\">确认，接受这些任务</button>",
+      "css": ".ds-button{font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;border:1px solid var(--line,#bccfce);border-radius:7px;padding:10px 16px;background:var(--paper,#fffefa);color:var(--ink,#18383e);font-size:14px;font-weight:600;min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:7px;cursor:pointer;transition:background-color 160ms ease-out,border-color 160ms ease-out}.ds-button:hover{background:var(--soft,#d9e9e9);border-color:var(--accent,#17616a)}.ds-button:focus-visible{outline:3px solid var(--accent,#17616a);outline-offset:4px}.ds-button:disabled{opacity:.6;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}.ds-primary{background:var(--accent,#17616a);border-color:var(--accent,#17616a);color:white}.ds-primary:hover{background:var(--accent,#17616a);filter:brightness(.94)}"
+    },
+    {
+      "name": "Secondary action",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Bordered action used for proposals and corrections.",
+      "html": "<button class=\"ds-button\">更新今日情况</button>",
+      "css": ".ds-button{font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;border:1px solid var(--line,#bccfce);border-radius:7px;padding:10px 16px;background:var(--paper,#fffefa);color:var(--ink,#18383e);font-size:14px;font-weight:600;min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:7px;cursor:pointer;transition:background-color 160ms ease-out,border-color 160ms ease-out}.ds-button:hover{background:var(--soft,#d9e9e9);border-color:var(--accent,#17616a)}.ds-button:focus-visible{outline:3px solid var(--accent,#17616a);outline-offset:4px}.ds-button:disabled{opacity:.6;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}"
+    },
+    {
+      "name": "Text action",
+      "kind": "button",
+      "refersTo": "button-text",
+      "description": "Quiet tertiary action; warning color is a separate state.",
+      "html": "<button class=\"ds-button ds-text\">撤回记录</button>",
+      "css": ".ds-button{font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;border:1px solid var(--line,#bccfce);border-radius:7px;padding:10px 16px;background:var(--paper,#fffefa);color:var(--ink,#18383e);font-size:14px;font-weight:600;min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:7px;cursor:pointer;transition:background-color 160ms ease-out,border-color 160ms ease-out}.ds-button:hover{background:var(--soft,#d9e9e9);border-color:var(--accent,#17616a)}.ds-button:focus-visible{outline:3px solid var(--accent,#17616a);outline-offset:4px}.ds-button:disabled{opacity:.6;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}.ds-text{background:transparent;border-color:transparent;color:var(--negative,#9f3434);padding-inline:8px}.ds-text:hover{background:var(--soft,#d9e9e9);border-color:var(--accent,#17616a)}"
+    },
+    {
+      "name": "Labeled field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Native number input from the daily context form.",
+      "html": "<label class=\"ds-field\">额外可用时间（分钟）<input type=\"number\" min=\"15\" max=\"240\" required value=\"90\"></label>",
+      "css": ".ds-field{font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;display:grid;gap:6px;font-size:13px;font-weight:600;color:var(--ink,#18383e)}.ds-field input{font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;width:100%;background:var(--paper,#fffefa);border:1px solid var(--line,#bccfce);border-radius:6px;padding:9px 10px;color:var(--ink,#18383e);min-height:44px;font-size:14px;caret-color:var(--accent,#17616a)}.ds-field input:focus-visible{outline:3px solid var(--accent,#17616a);outline-offset:4px}"
+    },
+    {
+      "name": "Stage navigation",
+      "kind": "nav",
+      "refersTo": "stage-navigation",
+      "description": "Current step uses semantic state, weight and an underline.",
+      "html": "<nav class=\"ds-stages\" aria-label=\"成长流程\"><button aria-current=\"step\">01 榜样与成长</button><button>02 晨间决策</button><button>03 接受任务</button></nav>",
+      "css": ".ds-stages{display:flex;gap:26px;border-bottom:1px solid var(--line,#bccfce);overflow:auto}.ds-stages button{font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;border:0;background:transparent;border-bottom:2px solid transparent;padding:18px 0 15px;white-space:nowrap;font-size:14px;color:var(--muted,#49676b);cursor:pointer;transition:background-color 160ms ease-out,border-color 160ms ease-out}.ds-stages button[aria-current=step]{border-bottom-color:var(--accent,#17616a);color:var(--ink,#18383e);font-weight:700}.ds-stages button:focus-visible{outline:3px solid var(--accent,#17616a);outline-offset:4px}@media(prefers-reduced-motion:reduce){.ds-stages button{transition:none}}"
+    },
+    {
+      "name": "Favorable status tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Noninteractive status; wording accompanies the favorable color.",
+      "html": "<span class=\"ds-tag\">已完成 · 模拟</span>",
+      "css": ".ds-tag{font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;display:inline-flex;align-items:center;border:1px solid var(--line,#bccfce);border-radius:5px;padding:3px 8px;font-size:12px;background:var(--soft,#d9e9e9);color:var(--positive,#246646);white-space:normal}"
+    },
+    {
+      "name": "Shared paper panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Flat bordered container for context and confirmation.",
+      "html": "<section class=\"ds-panel\"><h2>今天能走多远</h2><p>先确定可用时间与精力。</p></section>",
+      "css": ".ds-panel{font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;background:var(--paper,#fffefa);color:var(--ink,#18383e);border:1px solid var(--line,#bccfce);border-radius:12px;padding:24px;min-width:0;line-height:1.65}.ds-panel h2{margin:0;font-size:22px;letter-spacing:-.02em;line-height:1.35}.ds-panel p{margin:9px 0 0}"
+    },
+    {
+      "name": "A selected map node",
+      "kind": "custom",
+      "refersTo": "a-map-node",
+      "description": "A route destination with prerequisite text and selected lift.",
+      "html": "<button class=\"ds-map-node\" aria-pressed=\"true\"><strong>反向传播实现</strong><small>下一步 · 待证据</small></button>",
+      "css": ".ds-map-node{--bg:#eef4f4;--paper:#fffefa;--ink:#18383e;--muted:#49676b;--accent:#17616a;--soft:#d9e9e9;--line:#bccfce;--warm:#8b5511;--positive:#246646;--negative:#9f3434;font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;display:flex;flex-direction:column;gap:4px;align-items:center;border:1px solid var(--line,#bccfce);background:var(--paper,#fffefa);color:var(--ink,#18383e);border-radius:10px;padding:13px 17px;min-width:125px;text-align:center;box-shadow:0 4px 12px #0000000b;cursor:pointer;transition:background-color 160ms ease-out,border-color 160ms ease-out}.ds-map-node:hover{border-color:var(--accent,#17616a)}.ds-map-node[aria-pressed=true]{border:2px solid var(--accent,#17616a);box-shadow:0 5px 18px #00000018}.ds-map-node strong{font-size:14px}.ds-map-node small{font-size:12px;color:var(--muted,#49676b)}.ds-map-node:focus-visible{outline:3px solid var(--accent,#17616a);outline-offset:4px}@media(prefers-reduced-motion:reduce){.ds-map-node{transition:none}}"
+    },
+    {
+      "name": "B selected quest card",
+      "kind": "card",
+      "refersTo": "b-quest-card",
+      "description": "A selectable budget card; the selected border is compensated by padding.",
+      "html": "<button class=\"ds-quest\" aria-pressed=\"true\"><span class=\"ds-cost\"><span>AI</span><span>45 分钟 / 3 格</span></span><h3>实现一个梯度小实验</h3><p>一个能运行、能解释的小作品。</p><span class=\"ds-foot\"><strong>+30 XP</strong><span class=\"ds-mark\">已入手牌</span></span></button>",
+      "css": ".ds-quest{--bg:#f1edf4;--paper:#fffcff;--ink:#382640;--muted:#68566f;--accent:#654078;--soft:#e4d9eb;--line:#cbbcd1;--warm:#825317;--positive:#316747;font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;background:var(--paper,#fffcff);border:1px solid var(--line,#cbbcd1);color:var(--ink,#382640);border-radius:12px;padding:20px;display:flex;flex-direction:column;min-height:234px;text-align:left;cursor:pointer;transition:background-color 160ms ease-out,border-color 160ms ease-out}.ds-quest[aria-pressed=true]{border:2px solid var(--accent,#654078);padding:19px;background:#f9f3fc}.ds-cost{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--muted,#68566f);margin-bottom:24px}.ds-quest h3{font-size:18px;font-weight:650;line-height:1.35;margin:0}.ds-quest p{font-size:13px;line-height:1.65;color:var(--muted,#68566f);margin:11px 0 22px}.ds-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:12px}.ds-foot strong{color:var(--accent,#654078)}.ds-mark{border:1px solid var(--line,#cbbcd1);padding:3px 8px;border-radius:5px}.ds-quest:focus-visible{outline:3px solid var(--accent,#654078);outline-offset:4px}@media(prefers-reduced-motion:reduce){.ds-quest{transition:none}}"
+    },
+    {
+      "name": "C evidence document",
+      "kind": "custom",
+      "refersTo": "c-document",
+      "description": "Square document surface with written evidence state and a pending stamp.",
+      "html": "<section class=\"ds-document\"><div class=\"ds-doc-title\"><h2>今天留下了什么</h2></div><article class=\"ds-folio\"><div class=\"ds-stamp\">已留记录<br>待完整验证</div><div><h3>实现一个梯度小实验</h3><p>这里等待你补充实际发生的事。</p></div></article></section>",
+      "css": ".ds-document{--bg:#eaf0f4;--paper:#fff;--ink:#243c50;--muted:#50677a;--accent:#176552;--soft:#dceee5;--line:#bdced7;--warm:#865419;--positive:#176552;font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;background:var(--paper,#fff);color:var(--ink,#243c50);border:1px solid var(--line,#bdced7);padding:30px;min-width:0;line-height:1.65}.ds-doc-title{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line,#bdced7);padding-bottom:20px;margin-bottom:20px;align-items:center}.ds-doc-title h2{margin:0;font-size:22px;letter-spacing:-.02em;line-height:1.35}.ds-folio{display:grid;grid-template-columns:100px 1fr;gap:25px;border-bottom:1px solid var(--line,#bdced7);padding:24px 0}.ds-stamp{align-self:start;border:1px dashed var(--line,#bdced7);border-radius:50%;width:88px;height:88px;display:grid;place-content:center;text-align:center;color:var(--muted,#50677a);font-size:12px;line-height:1.7}.ds-folio h3{margin:0;font-size:17px;font-weight:650;line-height:1.35}.ds-folio p{font-size:14px;color:var(--muted,#50677a);margin:8px 0 0}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Jarvis comparison lab — 远征图谱 / 策略牌桌 / 证据工坊",
+    "overview": "This is a scan of three candidate worlds inside one throwaway interactive prototype, not one approved production identity. A expresses progression through maps, routes and chapters; B makes budget choices tangible through task cards and a ledger; C treats progress as an evidence document. Their names and visual descriptions come from the built artifact. The user’s preference remains pending.\n\nShared chrome and native controls make the alternatives comparable. Chinese system typography, quiet paper surfaces and compact state text support reading and action; the three palettes and signature structures remain separate. This record describes the current build, not a new set of design decisions. Surface composition and mode remain in `.impeccable/surfaces/game-lab.md`.",
+    "keyCharacteristics": [
+      "Three distinct candidate palettes with shared semantic color roles.",
+      "Chinese system typography; tabular numbers for time, budgets and XP.",
+      "A route map, B selectable task cards and C evidence documents.",
+      "Text and semantic state accompany color; keyboard focus remains visible on controls.",
+      "CSS and inline SVG carry the visuals; no shipping raster assets or external fonts."
+    ],
+    "rules": [
+      {
+        "name": "Candidate Boundary",
+        "body": "Keep A, B and C token sets separate in this lab. None is the approved production identity; user preference remains pending.",
+        "section": "colors"
+      },
+      {
+        "name": "Readable State",
+        "body": "Retain the text labels and semantic selection attributes that accompany color changes in the built controls.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "Do use each candidate’s complete palette with its existing map, card or document structure.",
+      "Do retain visible control focus, labeled fields, textual state and reduced-motion behavior.",
+      "Do distinguish action XP, evidence validation and measured results in the labels already present.",
+      "Do keep prototype comparison controls visually identifiable as lab chrome."
+    ],
+    "donts": [
+      "Don’t treat these alternatives or their descriptive names as a user-approved production identity.",
+      "Don’t introduce external fonts or raster imagery into this record; neither ships in the prototype.",
+      "Don’t turn the removed above-heading state badge or removed mobile chapter eyebrow into a reusable pattern."
+    ]
+  }
+}
