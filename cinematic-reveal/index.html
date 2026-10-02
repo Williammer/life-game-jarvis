@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#150f23">
+  <meta name="description" content="An unofficial cinematic Vice City game reveal design concept.">
+  <title>Grand Theft Auto VI — Vice City Reveal Concept</title>
+  <link rel="preconnect" href="https://www.rockstargames.com">
+  <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&family=Yellowtail&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z" fill="currentColor" stroke="none"></path></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"></path></symbol>
+    <symbol id="calendar" viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="15" rx="3"></rect><path d="M8 3v6m8-6v6M4 12h16m-11 4h2"></path></symbol>
+    <symbol id="controller" viewBox="0 0 24 24"><path d="M8 7h8c3 0 4 2 5 7l.5 3c.3 3-2 4-4 2l-3-3h-5l-3 3c-2 2-4.5 1-4.2-2L3 14c1-5 2-7 5-7Z"></path><path d="M8 10v5m-2.5-2.5h5m5-.5h.01m2 2h.01"></path></symbol>
+    <symbol id="globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><ellipse cx="12" cy="12" rx="4" ry="9"></ellipse><path d="M3 12h18"></path></symbol>
+    <symbol id="news" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"></rect><path d="M7 8h10M7 12h5m-5 4h10m-2-4h2"></path></symbol>
+    <symbol id="volume" viewBox="0 0 24 24"><path d="M11 4 5 9H2v6h3l6 5V4Zm4 4c3 2 3 6 0 8m3-11c5 4 5 10 0 14"></path></symbol>
+    <symbol id="skip" viewBox="0 0 24 24"><path d="m5 5 11 7L5 19Z" fill="currentColor" stroke="none"></path><path d="M19 5v14"></path></symbol>
+    <symbol id="pause" viewBox="0 0 24 24"><path d="M8 6v12M16 6v12" stroke-width="4"></path></symbol>
+    <symbol id="close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"></path></symbol>
+    <symbol id="instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><path d="M17.5 6.5h.01"></path></symbol>
+    <symbol id="youtube" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="5"></rect><path d="m10 9 6 3-6 3Z" fill="currentColor" stroke="none"></path></symbol>
+  </svg>
+  <main class="reveal" id="home">
+    <div class="scene" aria-hidden="true">
+      <img class="skyline" src="https://www.rockstargames.com/VI/_next/static/media/desktop.00.5pzu2sm-z4.jpg" alt="">
+      <img class="protagonists" src="https://www.rockstargames.com/VI/_next/static/media/desktop.0iky3x6.hl8fo.jpg" alt="">
+      <div class="sunset-grade"></div><div class="scene-shade"></div><div class="film-grain"></div>
+    </div>
+    <header class="header">
+      <a class="brand" href="#home" aria-label="Reveal concept home"><span>R</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 7 8 .7-6 5 2 8-7-4-7 4 2-8-6-5L9 9Z" fill="currentColor"></path></svg></a>
+      <nav class="navigation" aria-label="Main navigation">
+        <a class="active" href="#home">Home</a><button data-panel="story">Story</button><button data-panel="characters">Characters</button><button data-panel="gameplay">Gameplay</button><button data-panel="media">Media</button><button data-panel="news">News</button>
+      </nav>
+      <button class="preorder glass" data-panel="preorder">Pre-order Now <svg class="icon"><use href="#arrow"></use></svg></button>
+      <button class="menu-toggle glass" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
+    </header>
+    <section class="hero-content" aria-labelledby="game-title">
+      <div class="location"><span class="dot"></span> Welcome to Vice City <span class="location-line"></span></div>
+      <h1 class="game-logo" id="game-title" aria-label="Grand Theft Auto VI"><span class="logo-words" aria-hidden="true"><span>grand</span><span>theft</span><span>auto</span></span><span class="logo-vi" aria-hidden="true">VI<span class="vi-line"></span></span></h1>
+      <p class="tagline">The Next Criminal<br>Empire Begins.</p>
+      <p class="intro">Two outlaws. One sun-soaked city.<br>A whole new world of trouble.</p>
+      <div class="hero-actions">
+        <button class="button primary" data-panel="play">Play Now <svg class="icon"><use href="#arrow"></use></svg></button>
+        <button class="button trailer glass" data-panel="trailer"><svg class="icon"><use href="#play"></use></svg> Watch Trailer <span class="trailer-number">02</span></button>
+      </div>
+      <div class="availability"><span></span> Your next obsession is on the horizon.</div>
+    </section>
+    <aside class="scene-caption" aria-label="Featured characters"><span class="caption-line"></span><div><strong>Jason &amp; Lucia</strong><span>Together. Against everything.</span></div></aside>
+    <div class="bottom-dock">
+      <section class="info-cards" aria-label="Game information">
+        <button class="info-card glass" data-panel="release"><span class="card-heading"><svg class="icon"><use href="#calendar"></use></svg> Release Date</span><strong>November 19, 2026</strong><span class="card-detail"><span class="dot"></span> The countdown is on</span></button>
+        <button class="info-card glass" data-panel="platforms"><span class="card-heading"><svg class="icon"><use href="#controller"></use></svg> Platforms</span><strong class="platform-names"><span class="ps-mark">PS5</span><span class="platform-divider"></span><span class="xbox-mark">Xbox Series X|S</span></strong><span class="card-detail">A new generation of chaos</span></button>
+        <div class="info-card glass social-card"><span class="card-heading"><svg class="icon"><use href="#globe"></use></svg> Social Links</span><div class="social-links"><a href="https://www.instagram.com/rockstargames/" target="_blank" rel="noopener noreferrer" aria-label="Rockstar Games on Instagram"><svg class="icon"><use href="#instagram"></use></svg></a><a href="https://www.youtube.com/rockstargames" target="_blank" rel="noopener noreferrer" aria-label="Rockstar Games on YouTube"><svg class="icon"><use href="#youtube"></use></svg></a><a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer" aria-label="Official Rockstar Games website"><svg class="icon"><use href="#globe"></use></svg></a></div><span class="card-detail">Stay in the loop</span></div>
+        <button class="info-card glass news-card" data-panel="news"><span class="card-heading"><svg class="icon"><use href="#news"></use></svg> Latest News</span><strong>A closer look at Leonida</strong><span class="card-detail">Explore the world <svg class="icon"><use href="#arrow"></use></svg></span></button>
+      </section>
+      <section class="music-player glass" aria-label="Ambient music player">
+        <img class="album-art" src="https://www.rockstargames.com/VI/_next/static/media/desktop.00.5pzu2sm-z4.jpg" alt="Vice City skyline at dusk">
+        <div class="music-body">
+          <div class="music-meta"><span class="station"><span class="dot"></span> Vice City Radio</span><button class="volume-button" aria-label="Mute music" aria-pressed="false"><svg class="icon"><use href="#volume"></use></svg></button></div>
+          <div class="track-row"><div><strong id="track-name">After Hours</strong><span class="track-artist">Original ambient mix</span></div><div class="music-controls"><button class="music-play" aria-label="Play ambient music" aria-pressed="false"><svg class="icon"><use href="#play"></use></svg></button><button class="music-next" aria-label="Next ambient track"><svg class="icon"><use href="#skip"></use></svg></button></div></div>
+          <div class="progress-row"><span id="elapsed">0:00</span><div class="track-progress" role="progressbar" aria-label="Track progress" aria-valuemin="0" aria-valuemax="180" aria-valuenow="0"><span></span></div><span>3:00</span></div>
+        </div>
+      </section>
+    </div>
+    <footer class="footer"><span>Rockstar-inspired. Unofficial concept.</span><span class="footer-center">Love. Loyalty. Leonida.</span><span>A new era of open world</span></footer>
+    <p class="asset-error" hidden role="status">The artwork couldn't load. Check your connection and refresh the page.</p>
+  </main>
+  <dialog class="detail-dialog"><button class="dialog-close glass" aria-label="Close dialog"><svg class="icon"><use href="#close"></use></svg></button><div id="dialog-content"></div></dialog>
+  <div class="toast glass" role="status" hidden></div>
+</body>
+</html>
