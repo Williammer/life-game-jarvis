@@ -1,0 +1,212 @@
+[
+  {
+    "surface": "A1-desktop",
+    "main": 802,
+    "scroll": 1440,
+    "title": "远征图谱 · 榜样与成长 | Jarvis 原型",
+    "width": 1440
+  },
+  {
+    "surface": "A2-desktop",
+    "main": 1008,
+    "scroll": 1440,
+    "title": "远征图谱 · 晨间决策 | Jarvis 原型",
+    "width": 1440
+  },
+  {
+    "surface": "A3-desktop",
+    "main": 977,
+    "scroll": 1440,
+    "title": "远征图谱 · 接受任务 | Jarvis 原型",
+    "width": 1440
+  },
+  {
+    "surface": "A4-desktop",
+    "main": 868,
+    "scroll": 1440,
+    "title": "远征图谱 · 执行与调整 | Jarvis 原型",
+    "width": 1440
+  },
+  {
+    "surface": "A5-desktop",
+    "main": 988,
+    "scroll": 1440,
+    "title": "远征图谱 · 结算与成长 | Jarvis 原型",
+    "width": 1440
+  },
+  {
+    "surface": "B1-desktop",
+    "main": 803,
+    "scroll": 1440,
+    "title": "策略牌桌 · 榜样与成长 | Jarvis 原型",
+    "width": 1440
+  },
+  {
+    "surface": "B2-desktop",
+    "main": 1132,
+    "scroll": 1440,
+    "title": "策略牌桌 · 晨间决策 | Jarvis 原型",
+    "width": 1440
+  },
+  {
+    "surface": "B3-desktop",
+    "main": 978,
+    "scroll": 1440,
+    "title": "策略牌桌 · 接受任务 | Jarvis 原型",
+    "width": 1440
+  },
+  {
+    "surface": "B4-desktop",
+    "main": 885,
+    "scroll": 1440,
+    "title": "策略牌桌 · 执行与调整 | Jarvis 原型",
+    "width": 1440
+  },
+  {
+    "surface": "B5-desktop",
+    "main": 991,
+    "scroll": 1440,
+    "title": "策略牌桌 · 结算与成长 | Jarvis 原型",
+    "width": 1440
+  },
+  {
+    "surface": "C1-desktop",
+    "main": 835,
+    "scroll": 1440,
+    "title": "证据工坊 · 榜样与成长 | Jarvis 原型",
+    "width": 1440
+  },
+  {
+    "surface": "C2-desktop",
+    "main": 907,
+    "scroll": 1440,
+    "title": "证据工坊 · 晨间决策 | Jarvis 原型",
+    "width": 1440
+  },
+  {
+    "surface": "C3-desktop",
+    "main": 625,
+    "scroll": 1440,
+    "title": "证据工坊 · 接受任务 | Jarvis 原型",
+    "width": 1440
+  },
+  {
+    "surface": "C4-desktop",
+    "main": 839,
+    "scroll": 1440,
+    "title": "证据工坊 · 执行与调整 | Jarvis 原型",
+    "width": 1440
+  },
+  {
+    "surface": "C5-desktop",
+    "main": 1086,
+    "scroll": 1440,
+    "title": "证据工坊 · 结算与成长 | Jarvis 原型",
+    "width": 1440
+  },
+  {
+    "surface": "A1-mobile",
+    "main": 802,
+    "scroll": 390,
+    "title": "远征图谱 · 榜样与成长 | Jarvis 原型",
+    "width": 390
+  },
+  {
+    "surface": "A2-mobile",
+    "main": 1008,
+    "scroll": 390,
+    "title": "远征图谱 · 晨间决策 | Jarvis 原型",
+    "width": 390
+  },
+  {
+    "surface": "A3-mobile",
+    "main": 977,
+    "scroll": 390,
+    "title": "远征图谱 · 接受任务 | Jarvis 原型",
+    "width": 390
+  },
+  {
+    "surface": "A4-mobile",
+    "main": 868,
+    "scroll": 390,
+    "title": "远征图谱 · 执行与调整 | Jarvis 原型",
+    "width": 390
+  },
+  {
+    "surface": "A5-mobile",
+    "main": 988,
+    "scroll": 390,
+    "title": "远征图谱 · 结算与成长 | Jarvis 原型",
+    "width": 390
+  },
+  {
+    "surface": "B1-mobile",
+    "main": 803,
+    "scroll": 390,
+    "title": "策略牌桌 · 榜样与成长 | Jarvis 原型",
+    "width": 390
+  },
+  {
+    "surface": "B2-mobile",
+    "main": 1132,
+    "scroll": 390,
+    "title": "策略牌桌 · 晨间决策 | Jarvis 原型",
+    "width": 390
+  },
+  {
+    "surface": "B3-mobile",
+    "main": 978,
+    "scroll": 390,
+    "title": "策略牌桌 · 接受任务 | Jarvis 原型",
+    "width": 390
+  },
+  {
+    "surface": "B4-mobile",
+    "main": 885,
+    "scroll": 390,
+    "title": "策略牌桌 · 执行与调整 | Jarvis 原型",
+    "width": 390
+  },
+  {
+    "surface": "B5-mobile",
+    "main": 991,
+    "scroll": 390,
+    "title": "策略牌桌 · 结算与成长 | Jarvis 原型",
+    "width": 390
+  },
+  {
+    "surface": "C1-mobile",
+    "main": 835,
+    "scroll": 390,
+    "title": "证据工坊 · 榜样与成长 | Jarvis 原型",
+    "width": 390
+  },
+  {
+    "surface": "C2-mobile",
+    "main": 907,
+    "scroll": 390,
+    "title": "证据工坊 · 晨间决策 | Jarvis 原型",
+    "width": 390
+  },
+  {
+    "surface": "C3-mobile",
+    "main": 625,
+    "scroll": 390,
+    "title": "证据工坊 · 接受任务 | Jarvis 原型",
+    "width": 390
+  },
+  {
+    "surface": "C4-mobile",
+    "main": 839,
+    "scroll": 390,
+    "title": "证据工坊 · 执行与调整 | Jarvis 原型",
+    "width": 390
+  },
+  {
+    "surface": "C5-mobile",
+    "main": 1086,
+    "scroll": 390,
+    "title": "证据工坊 · 结算与成长 | Jarvis 原型",
+    "width": 390
+  }
+]

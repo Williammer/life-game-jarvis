@@ -1,0 +1,1358 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-30T16:02:59.173559+00:00",
+  "title": "Design System: Jarvis — daily workspace and original variants",
+  "extensions": {
+    "colorMeta": {
+      "a-bg": {
+        "role": "neutral",
+        "displayName": "A Bg",
+        "canonical": "#eef4f4",
+        "tonalRamp": [
+          "oklch(15.00% 0.00638 197.05)",
+          "oklch(26.43% 0.00638 197.05)",
+          "oklch(37.86% 0.00638 197.05)",
+          "oklch(49.29% 0.00638 197.05)",
+          "oklch(60.71% 0.00638 197.05)",
+          "oklch(72.14% 0.00638 197.05)",
+          "oklch(83.57% 0.00638 197.05)",
+          "oklch(95.00% 0.00638 197.05)"
+        ]
+      },
+      "a-paper": {
+        "role": "neutral",
+        "displayName": "A Paper",
+        "canonical": "#fffefa",
+        "tonalRamp": [
+          "oklch(15.00% 0.00537 95.10)",
+          "oklch(26.43% 0.00537 95.10)",
+          "oklch(37.86% 0.00537 95.10)",
+          "oklch(49.29% 0.00537 95.10)",
+          "oklch(60.71% 0.00537 95.10)",
+          "oklch(72.14% 0.00537 95.10)",
+          "oklch(83.57% 0.00537 95.10)",
+          "oklch(95.00% 0.00537 95.10)"
+        ]
+      },
+      "a-ink": {
+        "role": "neutral",
+        "displayName": "A Ink",
+        "canonical": "#18383e",
+        "tonalRamp": [
+          "oklch(15.00% 0.03898 211.35)",
+          "oklch(26.43% 0.03898 211.35)",
+          "oklch(37.86% 0.03898 211.35)",
+          "oklch(49.29% 0.03898 211.35)",
+          "oklch(60.71% 0.03898 211.35)",
+          "oklch(72.14% 0.03898 211.35)",
+          "oklch(83.57% 0.03898 211.35)",
+          "oklch(95.00% 0.03898 211.35)"
+        ]
+      },
+      "a-muted": {
+        "role": "neutral",
+        "displayName": "A Muted",
+        "canonical": "#49676b",
+        "tonalRamp": [
+          "oklch(15.00% 0.03554 206.38)",
+          "oklch(26.43% 0.03554 206.38)",
+          "oklch(37.86% 0.03554 206.38)",
+          "oklch(49.29% 0.03554 206.38)",
+          "oklch(60.71% 0.03554 206.38)",
+          "oklch(72.14% 0.03554 206.38)",
+          "oklch(83.57% 0.03554 206.38)",
+          "oklch(95.00% 0.03554 206.38)"
+        ]
+      },
+      "a-accent": {
+        "role": "primary",
+        "displayName": "A Accent",
+        "canonical": "#17616a",
+        "tonalRamp": [
+          "oklch(15.00% 0.07011 207.12)",
+          "oklch(26.43% 0.07011 207.12)",
+          "oklch(37.86% 0.07011 207.12)",
+          "oklch(49.29% 0.07011 207.12)",
+          "oklch(60.71% 0.07011 207.12)",
+          "oklch(72.14% 0.07011 207.12)",
+          "oklch(83.57% 0.07011 207.12)",
+          "oklch(95.00% 0.07011 207.12)"
+        ]
+      },
+      "a-soft": {
+        "role": "neutral",
+        "displayName": "A Soft",
+        "canonical": "#d9e9e9",
+        "tonalRamp": [
+          "oklch(15.00% 0.01702 196.86)",
+          "oklch(26.43% 0.01702 196.86)",
+          "oklch(37.86% 0.01702 196.86)",
+          "oklch(49.29% 0.01702 196.86)",
+          "oklch(60.71% 0.01702 196.86)",
+          "oklch(72.14% 0.01702 196.86)",
+          "oklch(83.57% 0.01702 196.86)",
+          "oklch(95.00% 0.01702 196.86)"
+        ]
+      },
+      "a-line": {
+        "role": "neutral",
+        "displayName": "A Line",
+        "canonical": "#bccfce",
+        "tonalRamp": [
+          "oklch(15.00% 0.02061 192.93)",
+          "oklch(26.43% 0.02061 192.93)",
+          "oklch(37.86% 0.02061 192.93)",
+          "oklch(49.29% 0.02061 192.93)",
+          "oklch(60.71% 0.02061 192.93)",
+          "oklch(72.14% 0.02061 192.93)",
+          "oklch(83.57% 0.02061 192.93)",
+          "oklch(95.00% 0.02061 192.93)"
+        ]
+      },
+      "a-warm": {
+        "role": "secondary",
+        "displayName": "A Warm",
+        "canonical": "#8b5511",
+        "tonalRamp": [
+          "oklch(15.00% 0.10463 65.55)",
+          "oklch(26.43% 0.10463 65.55)",
+          "oklch(37.86% 0.10463 65.55)",
+          "oklch(49.29% 0.10463 65.55)",
+          "oklch(60.71% 0.10463 65.55)",
+          "oklch(72.14% 0.10463 65.55)",
+          "oklch(83.57% 0.10463 65.55)",
+          "oklch(95.00% 0.10463 65.55)"
+        ]
+      },
+      "a-positive": {
+        "role": "secondary",
+        "displayName": "A Positive",
+        "canonical": "#246646",
+        "tonalRamp": [
+          "oklch(15.00% 0.08536 158.99)",
+          "oklch(26.43% 0.08536 158.99)",
+          "oklch(37.86% 0.08536 158.99)",
+          "oklch(49.29% 0.08536 158.99)",
+          "oklch(60.71% 0.08536 158.99)",
+          "oklch(72.14% 0.08536 158.99)",
+          "oklch(83.57% 0.08536 158.99)",
+          "oklch(95.00% 0.08536 158.99)"
+        ]
+      },
+      "a-negative": {
+        "role": "secondary",
+        "displayName": "A Negative",
+        "canonical": "#9f3434",
+        "tonalRamp": [
+          "oklch(15.00% 0.14220 24.16)",
+          "oklch(26.43% 0.14220 24.16)",
+          "oklch(37.86% 0.14220 24.16)",
+          "oklch(49.29% 0.14220 24.16)",
+          "oklch(60.71% 0.14220 24.16)",
+          "oklch(72.14% 0.14220 24.16)",
+          "oklch(83.57% 0.14220 24.16)",
+          "oklch(95.00% 0.14220 24.16)"
+        ]
+      },
+      "b-bg": {
+        "role": "neutral",
+        "displayName": "B Bg",
+        "canonical": "#f1edf4",
+        "tonalRamp": [
+          "oklch(15.00% 0.01021 311.18)",
+          "oklch(26.43% 0.01021 311.18)",
+          "oklch(37.86% 0.01021 311.18)",
+          "oklch(49.29% 0.01021 311.18)",
+          "oklch(60.71% 0.01021 311.18)",
+          "oklch(72.14% 0.01021 311.18)",
+          "oklch(83.57% 0.01021 311.18)",
+          "oklch(95.00% 0.01021 311.18)"
+        ]
+      },
+      "b-paper": {
+        "role": "neutral",
+        "displayName": "B Paper",
+        "canonical": "#fffcff",
+        "tonalRamp": [
+          "oklch(15.00% 0.00504 325.61)",
+          "oklch(26.43% 0.00504 325.61)",
+          "oklch(37.86% 0.00504 325.61)",
+          "oklch(49.29% 0.00504 325.61)",
+          "oklch(60.71% 0.00504 325.61)",
+          "oklch(72.14% 0.00504 325.61)",
+          "oklch(83.57% 0.00504 325.61)",
+          "oklch(95.00% 0.00504 325.61)"
+        ]
+      },
+      "b-ink": {
+        "role": "neutral",
+        "displayName": "B Ink",
+        "canonical": "#382640",
+        "tonalRamp": [
+          "oklch(15.00% 0.05147 315.05)",
+          "oklch(26.43% 0.05147 315.05)",
+          "oklch(37.86% 0.05147 315.05)",
+          "oklch(49.29% 0.05147 315.05)",
+          "oklch(60.71% 0.05147 315.05)",
+          "oklch(72.14% 0.05147 315.05)",
+          "oklch(83.57% 0.05147 315.05)",
+          "oklch(95.00% 0.05147 315.05)"
+        ]
+      },
+      "b-muted": {
+        "role": "neutral",
+        "displayName": "B Muted",
+        "canonical": "#68566f",
+        "tonalRamp": [
+          "oklch(15.00% 0.04515 316.46)",
+          "oklch(26.43% 0.04515 316.46)",
+          "oklch(37.86% 0.04515 316.46)",
+          "oklch(49.29% 0.04515 316.46)",
+          "oklch(60.71% 0.04515 316.46)",
+          "oklch(72.14% 0.04515 316.46)",
+          "oklch(83.57% 0.04515 316.46)",
+          "oklch(95.00% 0.04515 316.46)"
+        ]
+      },
+      "b-accent": {
+        "role": "primary",
+        "displayName": "B Accent",
+        "canonical": "#654078",
+        "tonalRamp": [
+          "oklch(15.00% 0.09834 313.35)",
+          "oklch(26.43% 0.09834 313.35)",
+          "oklch(37.86% 0.09834 313.35)",
+          "oklch(49.29% 0.09834 313.35)",
+          "oklch(60.71% 0.09834 313.35)",
+          "oklch(72.14% 0.09834 313.35)",
+          "oklch(83.57% 0.09834 313.35)",
+          "oklch(95.00% 0.09834 313.35)"
+        ]
+      },
+      "b-soft": {
+        "role": "neutral",
+        "displayName": "B Soft",
+        "canonical": "#e4d9eb",
+        "tonalRamp": [
+          "oklch(15.00% 0.02695 312.57)",
+          "oklch(26.43% 0.02695 312.57)",
+          "oklch(37.86% 0.02695 312.57)",
+          "oklch(49.29% 0.02695 312.57)",
+          "oklch(60.71% 0.02695 312.57)",
+          "oklch(72.14% 0.02695 312.57)",
+          "oklch(83.57% 0.02695 312.57)",
+          "oklch(95.00% 0.02695 312.57)"
+        ]
+      },
+      "b-line": {
+        "role": "neutral",
+        "displayName": "B Line",
+        "canonical": "#cbbcd1",
+        "tonalRamp": [
+          "oklch(15.00% 0.03333 316.40)",
+          "oklch(26.43% 0.03333 316.40)",
+          "oklch(37.86% 0.03333 316.40)",
+          "oklch(49.29% 0.03333 316.40)",
+          "oklch(60.71% 0.03333 316.40)",
+          "oklch(72.14% 0.03333 316.40)",
+          "oklch(83.57% 0.03333 316.40)",
+          "oklch(95.00% 0.03333 316.40)"
+        ]
+      },
+      "b-warm": {
+        "role": "secondary",
+        "displayName": "B Warm",
+        "canonical": "#825317",
+        "tonalRamp": [
+          "oklch(15.00% 0.09546 67.62)",
+          "oklch(26.43% 0.09546 67.62)",
+          "oklch(37.86% 0.09546 67.62)",
+          "oklch(49.29% 0.09546 67.62)",
+          "oklch(60.71% 0.09546 67.62)",
+          "oklch(72.14% 0.09546 67.62)",
+          "oklch(83.57% 0.09546 67.62)",
+          "oklch(95.00% 0.09546 67.62)"
+        ]
+      },
+      "b-positive": {
+        "role": "secondary",
+        "displayName": "B Positive",
+        "canonical": "#316747",
+        "tonalRamp": [
+          "oklch(15.00% 0.07824 155.70)",
+          "oklch(26.43% 0.07824 155.70)",
+          "oklch(37.86% 0.07824 155.70)",
+          "oklch(49.29% 0.07824 155.70)",
+          "oklch(60.71% 0.07824 155.70)",
+          "oklch(72.14% 0.07824 155.70)",
+          "oklch(83.57% 0.07824 155.70)",
+          "oklch(95.00% 0.07824 155.70)"
+        ]
+      },
+      "c-bg": {
+        "role": "neutral",
+        "displayName": "C Bg",
+        "canonical": "#eaf0f4",
+        "tonalRamp": [
+          "oklch(15.00% 0.00839 236.56)",
+          "oklch(26.43% 0.00839 236.56)",
+          "oklch(37.86% 0.00839 236.56)",
+          "oklch(49.29% 0.00839 236.56)",
+          "oklch(60.71% 0.00839 236.56)",
+          "oklch(72.14% 0.00839 236.56)",
+          "oklch(83.57% 0.00839 236.56)",
+          "oklch(95.00% 0.00839 236.56)"
+        ]
+      },
+      "c-paper": {
+        "role": "neutral",
+        "displayName": "C Paper",
+        "canonical": "#fff",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
+        ]
+      },
+      "c-ink": {
+        "role": "neutral",
+        "displayName": "C Ink",
+        "canonical": "#243c50",
+        "tonalRamp": [
+          "oklch(15.00% 0.04624 244.84)",
+          "oklch(26.43% 0.04624 244.84)",
+          "oklch(37.86% 0.04624 244.84)",
+          "oklch(49.29% 0.04624 244.84)",
+          "oklch(60.71% 0.04624 244.84)",
+          "oklch(72.14% 0.04624 244.84)",
+          "oklch(83.57% 0.04624 244.84)",
+          "oklch(95.00% 0.04624 244.84)"
+        ]
+      },
+      "c-muted": {
+        "role": "neutral",
+        "displayName": "C Muted",
+        "canonical": "#50677a",
+        "tonalRamp": [
+          "oklch(15.00% 0.04100 243.62)",
+          "oklch(26.43% 0.04100 243.62)",
+          "oklch(37.86% 0.04100 243.62)",
+          "oklch(49.29% 0.04100 243.62)",
+          "oklch(60.71% 0.04100 243.62)",
+          "oklch(72.14% 0.04100 243.62)",
+          "oklch(83.57% 0.04100 243.62)",
+          "oklch(95.00% 0.04100 243.62)"
+        ]
+      },
+      "c-accent": {
+        "role": "primary",
+        "displayName": "C Accent",
+        "canonical": "#176552",
+        "tonalRamp": [
+          "oklch(15.00% 0.07964 172.38)",
+          "oklch(26.43% 0.07964 172.38)",
+          "oklch(37.86% 0.07964 172.38)",
+          "oklch(49.29% 0.07964 172.38)",
+          "oklch(60.71% 0.07964 172.38)",
+          "oklch(72.14% 0.07964 172.38)",
+          "oklch(83.57% 0.07964 172.38)",
+          "oklch(95.00% 0.07964 172.38)"
+        ]
+      },
+      "c-soft": {
+        "role": "neutral",
+        "displayName": "C Soft",
+        "canonical": "#dceee5",
+        "tonalRamp": [
+          "oklch(15.00% 0.02251 164.50)",
+          "oklch(26.43% 0.02251 164.50)",
+          "oklch(37.86% 0.02251 164.50)",
+          "oklch(49.29% 0.02251 164.50)",
+          "oklch(60.71% 0.02251 164.50)",
+          "oklch(72.14% 0.02251 164.50)",
+          "oklch(83.57% 0.02251 164.50)",
+          "oklch(95.00% 0.02251 164.50)"
+        ]
+      },
+      "c-line": {
+        "role": "neutral",
+        "displayName": "C Line",
+        "canonical": "#bdced7",
+        "tonalRamp": [
+          "oklch(15.00% 0.02237 230.60)",
+          "oklch(26.43% 0.02237 230.60)",
+          "oklch(37.86% 0.02237 230.60)",
+          "oklch(49.29% 0.02237 230.60)",
+          "oklch(60.71% 0.02237 230.60)",
+          "oklch(72.14% 0.02237 230.60)",
+          "oklch(83.57% 0.02237 230.60)",
+          "oklch(95.00% 0.02237 230.60)"
+        ]
+      },
+      "c-warm": {
+        "role": "secondary",
+        "displayName": "C Warm",
+        "canonical": "#865419",
+        "tonalRamp": [
+          "oklch(15.00% 0.09747 65.56)",
+          "oklch(26.43% 0.09747 65.56)",
+          "oklch(37.86% 0.09747 65.56)",
+          "oklch(49.29% 0.09747 65.56)",
+          "oklch(60.71% 0.09747 65.56)",
+          "oklch(72.14% 0.09747 65.56)",
+          "oklch(83.57% 0.09747 65.56)",
+          "oklch(95.00% 0.09747 65.56)"
+        ]
+      },
+      "c-positive": {
+        "role": "secondary",
+        "displayName": "C Positive",
+        "canonical": "#176552",
+        "tonalRamp": [
+          "oklch(15.00% 0.07964 172.38)",
+          "oklch(26.43% 0.07964 172.38)",
+          "oklch(37.86% 0.07964 172.38)",
+          "oklch(49.29% 0.07964 172.38)",
+          "oklch(60.71% 0.07964 172.38)",
+          "oklch(72.14% 0.07964 172.38)",
+          "oklch(83.57% 0.07964 172.38)",
+          "oklch(95.00% 0.07964 172.38)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "white",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
+        ]
+      },
+      "a-map": {
+        "role": "neutral",
+        "displayName": "A Map",
+        "canonical": "#e3eeee",
+        "tonalRamp": [
+          "oklch(15.00% 0.01171 196.96)",
+          "oklch(26.43% 0.01171 196.96)",
+          "oklch(37.86% 0.01171 196.96)",
+          "oklch(49.29% 0.01171 196.96)",
+          "oklch(60.71% 0.01171 196.96)",
+          "oklch(72.14% 0.01171 196.96)",
+          "oklch(83.57% 0.01171 196.96)",
+          "oklch(95.00% 0.01171 196.96)"
+        ]
+      },
+      "b-selected-card": {
+        "role": "neutral",
+        "displayName": "B Selected Card",
+        "canonical": "#f9f3fc",
+        "tonalRamp": [
+          "oklch(15.00% 0.01346 314.76)",
+          "oklch(26.43% 0.01346 314.76)",
+          "oklch(37.86% 0.01346 314.76)",
+          "oklch(49.29% 0.01346 314.76)",
+          "oklch(60.71% 0.01346 314.76)",
+          "oklch(72.14% 0.01346 314.76)",
+          "oklch(83.57% 0.01346 314.76)",
+          "oklch(95.00% 0.01346 314.76)"
+        ]
+      },
+      "b-note-copy": {
+        "role": "neutral",
+        "displayName": "B Note Copy",
+        "canonical": "#eadfec",
+        "tonalRamp": [
+          "oklch(15.00% 0.02102 320.99)",
+          "oklch(26.43% 0.02102 320.99)",
+          "oklch(37.86% 0.02102 320.99)",
+          "oklch(49.29% 0.02102 320.99)",
+          "oklch(60.71% 0.02102 320.99)",
+          "oklch(72.14% 0.02102 320.99)",
+          "oklch(83.57% 0.02102 320.99)",
+          "oklch(95.00% 0.02102 320.99)"
+        ]
+      },
+      "chrome-bg": {
+        "role": "neutral",
+        "displayName": "Chrome Bg",
+        "canonical": "#202e36",
+        "tonalRamp": [
+          "oklch(15.00% 0.02386 233.70)",
+          "oklch(26.43% 0.02386 233.70)",
+          "oklch(37.86% 0.02386 233.70)",
+          "oklch(49.29% 0.02386 233.70)",
+          "oklch(60.71% 0.02386 233.70)",
+          "oklch(72.14% 0.02386 233.70)",
+          "oklch(83.57% 0.02386 233.70)",
+          "oklch(95.00% 0.02386 233.70)"
+        ]
+      },
+      "chrome-text": {
+        "role": "neutral",
+        "displayName": "Chrome Text",
+        "canonical": "#f7fafb",
+        "tonalRamp": [
+          "oklch(15.00% 0.00346 219.53)",
+          "oklch(26.43% 0.00346 219.53)",
+          "oklch(37.86% 0.00346 219.53)",
+          "oklch(49.29% 0.00346 219.53)",
+          "oklch(60.71% 0.00346 219.53)",
+          "oklch(72.14% 0.00346 219.53)",
+          "oklch(83.57% 0.00346 219.53)",
+          "oklch(95.00% 0.00346 219.53)"
+        ]
+      },
+      "chrome-line": {
+        "role": "neutral",
+        "displayName": "Chrome Line",
+        "canonical": "#50616b",
+        "tonalRamp": [
+          "oklch(15.00% 0.02630 233.89)",
+          "oklch(26.43% 0.02630 233.89)",
+          "oklch(37.86% 0.02630 233.89)",
+          "oklch(49.29% 0.02630 233.89)",
+          "oklch(60.71% 0.02630 233.89)",
+          "oklch(72.14% 0.02630 233.89)",
+          "oklch(83.57% 0.02630 233.89)",
+          "oklch(95.00% 0.02630 233.89)"
+        ]
+      },
+      "chrome-selected-bg": {
+        "role": "neutral",
+        "displayName": "Chrome Selected Bg",
+        "canonical": "#f5f9fa",
+        "tonalRamp": [
+          "oklch(15.00% 0.00446 214.33)",
+          "oklch(26.43% 0.00446 214.33)",
+          "oklch(37.86% 0.00446 214.33)",
+          "oklch(49.29% 0.00446 214.33)",
+          "oklch(60.71% 0.00446 214.33)",
+          "oklch(72.14% 0.00446 214.33)",
+          "oklch(83.57% 0.00446 214.33)",
+          "oklch(95.00% 0.00446 214.33)"
+        ]
+      },
+      "chrome-selected-text": {
+        "role": "neutral",
+        "displayName": "Chrome Selected Text",
+        "canonical": "#203e48",
+        "tonalRamp": [
+          "oklch(15.00% 0.03982 221.65)",
+          "oklch(26.43% 0.03982 221.65)",
+          "oklch(37.86% 0.03982 221.65)",
+          "oklch(49.29% 0.03982 221.65)",
+          "oklch(60.71% 0.03982 221.65)",
+          "oklch(72.14% 0.03982 221.65)",
+          "oklch(83.57% 0.03982 221.65)",
+          "oklch(95.00% 0.03982 221.65)"
+        ]
+      },
+      "chrome-hover-line": {
+        "role": "neutral",
+        "displayName": "Chrome Hover Line",
+        "canonical": "#849ba5",
+        "tonalRamp": [
+          "oklch(15.00% 0.02987 225.93)",
+          "oklch(26.43% 0.02987 225.93)",
+          "oklch(37.86% 0.02987 225.93)",
+          "oklch(49.29% 0.02987 225.93)",
+          "oklch(60.71% 0.02987 225.93)",
+          "oklch(72.14% 0.02987 225.93)",
+          "oklch(83.57% 0.02987 225.93)",
+          "oklch(95.00% 0.02987 225.93)"
+        ]
+      },
+      "day-control-ink": {
+        "role": "neutral",
+        "displayName": "Day Control Ink",
+        "canonical": "#253d50",
+        "tonalRamp": [
+          "oklch(15.00% 0.04482 243.43)",
+          "oklch(26.43% 0.04482 243.43)",
+          "oklch(37.86% 0.04482 243.43)",
+          "oklch(49.29% 0.04482 243.43)",
+          "oklch(60.71% 0.04482 243.43)",
+          "oklch(72.14% 0.04482 243.43)",
+          "oklch(83.57% 0.04482 243.43)",
+          "oklch(95.00% 0.04482 243.43)"
+        ]
+      },
+      "day-panel-line": {
+        "role": "neutral",
+        "displayName": "Day Panel Line",
+        "canonical": "#bfced8",
+        "tonalRamp": [
+          "oklch(15.00% 0.02151 236.81)",
+          "oklch(26.43% 0.02151 236.81)",
+          "oklch(37.86% 0.02151 236.81)",
+          "oklch(49.29% 0.02151 236.81)",
+          "oklch(60.71% 0.02151 236.81)",
+          "oklch(72.14% 0.02151 236.81)",
+          "oklch(83.57% 0.02151 236.81)",
+          "oklch(95.00% 0.02151 236.81)"
+        ]
+      },
+      "day-divider": {
+        "role": "neutral",
+        "displayName": "Day Divider",
+        "canonical": "#d4dfe5",
+        "tonalRamp": [
+          "oklch(15.00% 0.01445 231.22)",
+          "oklch(26.43% 0.01445 231.22)",
+          "oklch(37.86% 0.01445 231.22)",
+          "oklch(49.29% 0.01445 231.22)",
+          "oklch(60.71% 0.01445 231.22)",
+          "oklch(72.14% 0.01445 231.22)",
+          "oklch(83.57% 0.01445 231.22)",
+          "oklch(95.00% 0.01445 231.22)"
+        ]
+      },
+      "day-header-line": {
+        "role": "neutral",
+        "displayName": "Day Header Line",
+        "canonical": "#c5d3dc",
+        "tonalRamp": [
+          "oklch(15.00% 0.01970 235.77)",
+          "oklch(26.43% 0.01970 235.77)",
+          "oklch(37.86% 0.01970 235.77)",
+          "oklch(49.29% 0.01970 235.77)",
+          "oklch(60.71% 0.01970 235.77)",
+          "oklch(72.14% 0.01970 235.77)",
+          "oklch(83.57% 0.01970 235.77)",
+          "oklch(95.00% 0.01970 235.77)"
+        ]
+      },
+      "day-editor": {
+        "role": "neutral",
+        "displayName": "Day Editor",
+        "canonical": "#f4f8fa",
+        "tonalRamp": [
+          "oklch(15.00% 0.00504 228.82)",
+          "oklch(26.43% 0.00504 228.82)",
+          "oklch(37.86% 0.00504 228.82)",
+          "oklch(49.29% 0.00504 228.82)",
+          "oklch(60.71% 0.00504 228.82)",
+          "oklch(72.14% 0.00504 228.82)",
+          "oklch(83.57% 0.00504 228.82)",
+          "oklch(95.00% 0.00504 228.82)"
+        ]
+      },
+      "day-chat": {
+        "role": "neutral",
+        "displayName": "Day Chat",
+        "canonical": "#eef3f6",
+        "tonalRamp": [
+          "oklch(15.00% 0.00670 233.64)",
+          "oklch(26.43% 0.00670 233.64)",
+          "oklch(37.86% 0.00670 233.64)",
+          "oklch(49.29% 0.00670 233.64)",
+          "oklch(60.71% 0.00670 233.64)",
+          "oklch(72.14% 0.00670 233.64)",
+          "oklch(83.57% 0.00670 233.64)",
+          "oklch(95.00% 0.00670 233.64)"
+        ]
+      },
+      "day-context": {
+        "role": "neutral",
+        "displayName": "Day Context",
+        "canonical": "#edf5f1",
+        "tonalRamp": [
+          "oklch(15.00% 0.00998 164.87)",
+          "oklch(26.43% 0.00998 164.87)",
+          "oklch(37.86% 0.00998 164.87)",
+          "oklch(49.29% 0.00998 164.87)",
+          "oklch(60.71% 0.00998 164.87)",
+          "oklch(72.14% 0.00998 164.87)",
+          "oklch(83.57% 0.00998 164.87)",
+          "oklch(95.00% 0.00998 164.87)"
+        ]
+      },
+      "day-context-line": {
+        "role": "neutral",
+        "displayName": "Day Context Line",
+        "canonical": "#c0d9cc",
+        "tonalRamp": [
+          "oklch(15.00% 0.03208 163.13)",
+          "oklch(26.43% 0.03208 163.13)",
+          "oklch(37.86% 0.03208 163.13)",
+          "oklch(49.29% 0.03208 163.13)",
+          "oklch(60.71% 0.03208 163.13)",
+          "oklch(72.14% 0.03208 163.13)",
+          "oklch(83.57% 0.03208 163.13)",
+          "oklch(95.00% 0.03208 163.13)"
+        ]
+      },
+      "day-input-line": {
+        "role": "neutral",
+        "displayName": "Day Input Line",
+        "canonical": "#a9bdca",
+        "tonalRamp": [
+          "oklch(15.00% 0.02874 236.29)",
+          "oklch(26.43% 0.02874 236.29)",
+          "oklch(37.86% 0.02874 236.29)",
+          "oklch(49.29% 0.02874 236.29)",
+          "oklch(60.71% 0.02874 236.29)",
+          "oklch(72.14% 0.02874 236.29)",
+          "oklch(83.57% 0.02874 236.29)",
+          "oklch(95.00% 0.02874 236.29)"
+        ]
+      },
+      "day-fixed": {
+        "role": "neutral",
+        "displayName": "Day Fixed",
+        "canonical": "#e9f0f8",
+        "tonalRamp": [
+          "oklch(15.00% 0.01312 251.56)",
+          "oklch(26.43% 0.01312 251.56)",
+          "oklch(37.86% 0.01312 251.56)",
+          "oklch(49.29% 0.01312 251.56)",
+          "oklch(60.71% 0.01312 251.56)",
+          "oklch(72.14% 0.01312 251.56)",
+          "oklch(83.57% 0.01312 251.56)",
+          "oklch(95.00% 0.01312 251.56)"
+        ]
+      },
+      "day-fixed-line": {
+        "role": "neutral",
+        "displayName": "Day Fixed Line",
+        "canonical": "#a9bfd0",
+        "tonalRamp": [
+          "oklch(15.00% 0.03414 241.19)",
+          "oklch(26.43% 0.03414 241.19)",
+          "oklch(37.86% 0.03414 241.19)",
+          "oklch(49.29% 0.03414 241.19)",
+          "oklch(60.71% 0.03414 241.19)",
+          "oklch(72.14% 0.03414 241.19)",
+          "oklch(83.57% 0.03414 241.19)",
+          "oklch(95.00% 0.03414 241.19)"
+        ]
+      },
+      "day-fixed-ink": {
+        "role": "neutral",
+        "displayName": "Day Fixed Ink",
+        "canonical": "#294761",
+        "tonalRamp": [
+          "oklch(15.00% 0.05726 246.12)",
+          "oklch(26.43% 0.05726 246.12)",
+          "oklch(37.86% 0.05726 246.12)",
+          "oklch(49.29% 0.05726 246.12)",
+          "oklch(60.71% 0.05726 246.12)",
+          "oklch(72.14% 0.05726 246.12)",
+          "oklch(83.57% 0.05726 246.12)",
+          "oklch(95.00% 0.05726 246.12)"
+        ]
+      },
+      "day-quest": {
+        "role": "secondary",
+        "displayName": "Day Quest",
+        "canonical": "#e2f0e9",
+        "tonalRamp": [
+          "oklch(15.00% 0.01750 164.65)",
+          "oklch(26.43% 0.01750 164.65)",
+          "oklch(37.86% 0.01750 164.65)",
+          "oklch(49.29% 0.01750 164.65)",
+          "oklch(60.71% 0.01750 164.65)",
+          "oklch(72.14% 0.01750 164.65)",
+          "oklch(83.57% 0.01750 164.65)",
+          "oklch(95.00% 0.01750 164.65)"
+        ]
+      },
+      "day-quest-line": {
+        "role": "secondary",
+        "displayName": "Day Quest Line",
+        "canonical": "#84b59f",
+        "tonalRamp": [
+          "oklch(15.00% 0.06109 165.30)",
+          "oklch(26.43% 0.06109 165.30)",
+          "oklch(37.86% 0.06109 165.30)",
+          "oklch(49.29% 0.06109 165.30)",
+          "oklch(60.71% 0.06109 165.30)",
+          "oklch(72.14% 0.06109 165.30)",
+          "oklch(83.57% 0.06109 165.30)",
+          "oklch(95.00% 0.06109 165.30)"
+        ]
+      },
+      "day-quest-ink": {
+        "role": "secondary",
+        "displayName": "Day Quest Ink",
+        "canonical": "#185d48",
+        "tonalRamp": [
+          "oklch(15.00% 0.07621 168.41)",
+          "oklch(26.43% 0.07621 168.41)",
+          "oklch(37.86% 0.07621 168.41)",
+          "oklch(49.29% 0.07621 168.41)",
+          "oklch(60.71% 0.07621 168.41)",
+          "oklch(72.14% 0.07621 168.41)",
+          "oklch(83.57% 0.07621 168.41)",
+          "oklch(95.00% 0.07621 168.41)"
+        ]
+      },
+      "day-draft": {
+        "role": "secondary",
+        "displayName": "Day Draft",
+        "canonical": "#faf2df",
+        "tonalRamp": [
+          "oklch(15.00% 0.02646 87.85)",
+          "oklch(26.43% 0.02646 87.85)",
+          "oklch(37.86% 0.02646 87.85)",
+          "oklch(49.29% 0.02646 87.85)",
+          "oklch(60.71% 0.02646 87.85)",
+          "oklch(72.14% 0.02646 87.85)",
+          "oklch(83.57% 0.02646 87.85)",
+          "oklch(95.00% 0.02646 87.85)"
+        ]
+      },
+      "day-draft-line": {
+        "role": "secondary",
+        "displayName": "Day Draft Line",
+        "canonical": "#936b29",
+        "tonalRamp": [
+          "oklch(15.00% 0.09636 76.67)",
+          "oklch(26.43% 0.09636 76.67)",
+          "oklch(37.86% 0.09636 76.67)",
+          "oklch(49.29% 0.09636 76.67)",
+          "oklch(60.71% 0.09636 76.67)",
+          "oklch(72.14% 0.09636 76.67)",
+          "oklch(83.57% 0.09636 76.67)",
+          "oklch(95.00% 0.09636 76.67)"
+        ]
+      },
+      "day-draft-ink": {
+        "role": "secondary",
+        "displayName": "Day Draft Ink",
+        "canonical": "#725019",
+        "tonalRamp": [
+          "oklch(15.00% 0.08310 75.40)",
+          "oklch(26.43% 0.08310 75.40)",
+          "oklch(37.86% 0.08310 75.40)",
+          "oklch(49.29% 0.08310 75.40)",
+          "oklch(60.71% 0.08310 75.40)",
+          "oklch(72.14% 0.08310 75.40)",
+          "oklch(83.57% 0.08310 75.40)",
+          "oklch(95.00% 0.08310 75.40)"
+        ]
+      },
+      "day-conflict": {
+        "role": "secondary",
+        "displayName": "Day Conflict",
+        "canonical": "#fff0ed",
+        "tonalRamp": [
+          "oklch(15.00% 0.01678 31.08)",
+          "oklch(26.43% 0.01678 31.08)",
+          "oklch(37.86% 0.01678 31.08)",
+          "oklch(49.29% 0.01678 31.08)",
+          "oklch(60.71% 0.01678 31.08)",
+          "oklch(72.14% 0.01678 31.08)",
+          "oklch(83.57% 0.01678 31.08)",
+          "oklch(95.00% 0.01678 31.08)"
+        ]
+      },
+      "day-conflict-line": {
+        "role": "secondary",
+        "displayName": "Day Conflict Line",
+        "canonical": "#ac4747",
+        "tonalRamp": [
+          "oklch(15.00% 0.13316 22.71)",
+          "oklch(26.43% 0.13316 22.71)",
+          "oklch(37.86% 0.13316 22.71)",
+          "oklch(49.29% 0.13316 22.71)",
+          "oklch(60.71% 0.13316 22.71)",
+          "oklch(72.14% 0.13316 22.71)",
+          "oklch(83.57% 0.13316 22.71)",
+          "oklch(95.00% 0.13316 22.71)"
+        ]
+      },
+      "day-conflict-ink": {
+        "role": "secondary",
+        "displayName": "Day Conflict Ink",
+        "canonical": "#8d3333",
+        "tonalRamp": [
+          "oklch(15.00% 0.12284 23.41)",
+          "oklch(26.43% 0.12284 23.41)",
+          "oklch(37.86% 0.12284 23.41)",
+          "oklch(49.29% 0.12284 23.41)",
+          "oklch(60.71% 0.12284 23.41)",
+          "oklch(72.14% 0.12284 23.41)",
+          "oklch(83.57% 0.12284 23.41)",
+          "oklch(95.00% 0.12284 23.41)"
+        ]
+      },
+      "day-complete": {
+        "role": "secondary",
+        "displayName": "Day Complete",
+        "canonical": "#f1f5f3",
+        "tonalRamp": [
+          "oklch(15.00% 0.00499 165.01)",
+          "oklch(26.43% 0.00499 165.01)",
+          "oklch(37.86% 0.00499 165.01)",
+          "oklch(49.29% 0.00499 165.01)",
+          "oklch(60.71% 0.00499 165.01)",
+          "oklch(72.14% 0.00499 165.01)",
+          "oklch(83.57% 0.00499 165.01)",
+          "oklch(95.00% 0.00499 165.01)"
+        ]
+      },
+      "day-complete-line": {
+        "role": "secondary",
+        "displayName": "Day Complete Line",
+        "canonical": "#a5c0b2",
+        "tonalRamp": [
+          "oklch(15.00% 0.03534 162.98)",
+          "oklch(26.43% 0.03534 162.98)",
+          "oklch(37.86% 0.03534 162.98)",
+          "oklch(49.29% 0.03534 162.98)",
+          "oklch(60.71% 0.03534 162.98)",
+          "oklch(72.14% 0.03534 162.98)",
+          "oklch(83.57% 0.03534 162.98)",
+          "oklch(95.00% 0.03534 162.98)"
+        ]
+      },
+      "day-complete-ink": {
+        "role": "secondary",
+        "displayName": "Day Complete Ink",
+        "canonical": "#3d6655",
+        "tonalRamp": [
+          "oklch(15.00% 0.05420 165.94)",
+          "oklch(26.43% 0.05420 165.94)",
+          "oklch(37.86% 0.05420 165.94)",
+          "oklch(49.29% 0.05420 165.94)",
+          "oklch(60.71% 0.05420 165.94)",
+          "oklch(72.14% 0.05420 165.94)",
+          "oklch(83.57% 0.05420 165.94)",
+          "oklch(95.00% 0.05420 165.94)"
+        ]
+      },
+      "day-unchanged": {
+        "role": "neutral",
+        "displayName": "Day Unchanged",
+        "canonical": "#f2f5f7",
+        "tonalRamp": [
+          "oklch(15.00% 0.00418 236.50)",
+          "oklch(26.43% 0.00418 236.50)",
+          "oklch(37.86% 0.00418 236.50)",
+          "oklch(49.29% 0.00418 236.50)",
+          "oklch(60.71% 0.00418 236.50)",
+          "oklch(72.14% 0.00418 236.50)",
+          "oklch(83.57% 0.00418 236.50)",
+          "oklch(95.00% 0.00418 236.50)"
+        ]
+      },
+      "day-unchanged-line": {
+        "role": "neutral",
+        "displayName": "Day Unchanged Line",
+        "canonical": "#bacbd5",
+        "tonalRamp": [
+          "oklch(15.00% 0.02324 233.42)",
+          "oklch(26.43% 0.02324 233.42)",
+          "oklch(37.86% 0.02324 233.42)",
+          "oklch(49.29% 0.02324 233.42)",
+          "oklch(60.71% 0.02324 233.42)",
+          "oklch(72.14% 0.02324 233.42)",
+          "oklch(83.57% 0.02324 233.42)",
+          "oklch(95.00% 0.02324 233.42)"
+        ]
+      },
+      "day-now": {
+        "role": "secondary",
+        "displayName": "Day Now",
+        "canonical": "#c14843",
+        "tonalRamp": [
+          "oklch(15.00% 0.15650 25.74)",
+          "oklch(26.43% 0.15650 25.74)",
+          "oklch(37.86% 0.15650 25.74)",
+          "oklch(49.29% 0.15650 25.74)",
+          "oklch(60.71% 0.15650 25.74)",
+          "oklch(72.14% 0.15650 25.74)",
+          "oklch(83.57% 0.15650 25.74)",
+          "oklch(95.00% 0.15650 25.74)"
+        ]
+      },
+      "day-map": {
+        "role": "neutral",
+        "displayName": "Day Map",
+        "canonical": "#edf5f4",
+        "tonalRamp": [
+          "oklch(15.00% 0.00858 188.11)",
+          "oklch(26.43% 0.00858 188.11)",
+          "oklch(37.86% 0.00858 188.11)",
+          "oklch(49.29% 0.00858 188.11)",
+          "oklch(60.71% 0.00858 188.11)",
+          "oklch(72.14% 0.00858 188.11)",
+          "oklch(83.57% 0.00858 188.11)",
+          "oklch(95.00% 0.00858 188.11)"
+        ]
+      },
+      "day-map-line": {
+        "role": "neutral",
+        "displayName": "Day Map Line",
+        "canonical": "#c9dcd6",
+        "tonalRamp": [
+          "oklch(15.00% 0.02191 174.93)",
+          "oklch(26.43% 0.02191 174.93)",
+          "oklch(37.86% 0.02191 174.93)",
+          "oklch(49.29% 0.02191 174.93)",
+          "oklch(60.71% 0.02191 174.93)",
+          "oklch(72.14% 0.02191 174.93)",
+          "oklch(83.57% 0.02191 174.93)",
+          "oklch(95.00% 0.02191 174.93)"
+        ]
+      },
+      "day-route": {
+        "role": "secondary",
+        "displayName": "Day Route",
+        "canonical": "#9a702c",
+        "tonalRamp": [
+          "oklch(15.00% 0.09923 76.23)",
+          "oklch(26.43% 0.09923 76.23)",
+          "oklch(37.86% 0.09923 76.23)",
+          "oklch(49.29% 0.09923 76.23)",
+          "oklch(60.71% 0.09923 76.23)",
+          "oklch(72.14% 0.09923 76.23)",
+          "oklch(83.57% 0.09923 76.23)",
+          "oklch(95.00% 0.09923 76.23)"
+        ]
+      },
+      "day-node-line": {
+        "role": "neutral",
+        "displayName": "Day Node Line",
+        "canonical": "#a8c3b6",
+        "tonalRamp": [
+          "oklch(15.00% 0.03448 164.90)",
+          "oklch(26.43% 0.03448 164.90)",
+          "oklch(37.86% 0.03448 164.90)",
+          "oklch(49.29% 0.03448 164.90)",
+          "oklch(60.71% 0.03448 164.90)",
+          "oklch(72.14% 0.03448 164.90)",
+          "oklch(83.57% 0.03448 164.90)",
+          "oklch(95.00% 0.03448 164.90)"
+        ]
+      },
+      "day-notice": {
+        "role": "neutral",
+        "displayName": "Day Notice",
+        "canonical": "#e1eee7",
+        "tonalRamp": [
+          "oklch(15.00% 0.01664 162.74)",
+          "oklch(26.43% 0.01664 162.74)",
+          "oklch(37.86% 0.01664 162.74)",
+          "oklch(49.29% 0.01664 162.74)",
+          "oklch(60.71% 0.01664 162.74)",
+          "oklch(72.14% 0.01664 162.74)",
+          "oklch(83.57% 0.01664 162.74)",
+          "oklch(95.00% 0.01664 162.74)"
+        ]
+      },
+      "day-notice-line": {
+        "role": "neutral",
+        "displayName": "Day Notice Line",
+        "canonical": "#bad1c3",
+        "tonalRamp": [
+          "oklch(15.00% 0.03138 158.96)",
+          "oklch(26.43% 0.03138 158.96)",
+          "oklch(37.86% 0.03138 158.96)",
+          "oklch(49.29% 0.03138 158.96)",
+          "oklch(60.71% 0.03138 158.96)",
+          "oklch(72.14% 0.03138 158.96)",
+          "oklch(83.57% 0.03138 158.96)",
+          "oklch(95.00% 0.03138 158.96)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Original variants page headings; the default workspace uses day-heading."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Shared section headings with documented signature overrides."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Task and record titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Inherited native Chinese reading stack and line height."
+      },
+      "body-copy": {
+        "displayName": "Body Copy",
+        "purpose": "Explicit 14px explanatory copy."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Compact metadata and status labels."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Shared primary, secondary and text actions."
+      },
+      "chapter-spine": {
+        "displayName": "Chapter Spine",
+        "purpose": "Historical A-only vertical chapter marker; hidden below 520px."
+      },
+      "day-heading": {
+        "displayName": "Day Heading",
+        "purpose": "Default daily heading; 24px at 850px and below."
+      },
+      "day-section": {
+        "displayName": "Day Section",
+        "purpose": "Calendar, conversation and rail section headings."
+      },
+      "day-conversation": {
+        "displayName": "Day Conversation",
+        "purpose": "Intent and chat copy; 12px on mobile."
+      },
+      "day-action": {
+        "displayName": "Day Action",
+        "purpose": "Compact daily-panel actions; shared base remains 14px."
+      },
+      "day-gap": {
+        "displayName": "Day Gap",
+        "purpose": "Tabular gap values; units remain separate."
+      }
+    },
+    "shadows": [
+      {
+        "name": "a-map-node",
+        "value": "0 4px 12px #0000000b",
+        "purpose": "Historical variants only. Resting route destination."
+      },
+      {
+        "name": "a-map-node-selected",
+        "value": "0 5px 18px #00000018",
+        "purpose": "Historical variants only. Selected route destination."
+      },
+      {
+        "name": "prototype-switcher",
+        "value": "0 8px 30px #00000030",
+        "purpose": "Historical variants only. Fixed lab comparison chrome."
+      }
+    ],
+    "motion": [
+      {
+        "name": "button-state",
+        "value": "background-color 160ms ease-out,border-color 160ms ease-out",
+        "purpose": "Existing button state transition; disabled under prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "variants-wide-min",
+        "value": "1450px"
+      },
+      {
+        "name": "variants-compact-max",
+        "value": "1100px"
+      },
+      {
+        "name": "variants-stack-max",
+        "value": "800px"
+      },
+      {
+        "name": "variants-narrow-max",
+        "value": "520px"
+      },
+      {
+        "name": "day-wide-min",
+        "value": "1600px"
+      },
+      {
+        "name": "day-two-column-max",
+        "value": "1250px"
+      },
+      {
+        "name": "day-stack-max",
+        "value": "850px"
+      },
+      {
+        "name": "module-compact-max",
+        "value": "1200px"
+      },
+      {
+        "name": "module-pane-max",
+        "value": "850px"
+      },
+      {
+        "name": "module-narrow-max",
+        "value": "440px"
+      }
+    ],
+    "acceptedSurfacePatterns": [
+      {
+        "name": "Unified module ledger and shared detail",
+        "surface": ".impeccable/surfaces/module-atlas.md",
+        "sources": [
+          "module-ui.js",
+          "modules.css",
+          "day.js"
+        ],
+        "conceptSeed": {
+          "value": "c93ce131",
+          "status": "inherited from the game-lab contract; no new roll"
+        },
+        "world": "Existing C slate/ink/emerald evidence workshop with A quantitative gaps and progression; no token replacement.",
+        "patterns": [
+          {
+            "name": "Module ledger",
+            "description": "One ruled white comparison surface for direction, module-relative standing and coverage, tasks and horizons, and exemplar gap. Unknown remains written; XP stays separate.",
+            "responsive": "Four columns above 850px; labeled two-column module sections at 850px; work and comparison span the row at 440px."
+          },
+          {
+            "name": "Evidence and route document",
+            "description": "Shared renderer orders current evidence, sourced exemplar comparison and near/mid/long route. Values keep units and comparability limits; native disclosures hold scoring basis.",
+            "responsive": "Document plus 360px Jarvis column, 330px at 1200px. Roadmap stacks and metric bars hide at 1200px while written values remain."
+          },
+          {
+            "name": "Contextual proposal and mobile panes",
+            "description": "Jarvis proposals expose assessment, evidence coverage, gap and horizons before confirmation; stale proposals disable acceptance. Module/document and Jarvis discussion are explicit mobile panes.",
+            "responsive": "At 850px only the selected pane displays. Module opening selects the document; analysis or reference discussion selects Jarvis. Pane buttons use aria-pressed."
+          }
+        ],
+        "evidence": [
+          ".impeccable/review-modules/overview-desktop.png",
+          ".impeccable/review-modules/overview-mobile.png",
+          ".impeccable/review-modules/agent-desktop.png",
+          ".impeccable/review-modules/agent-mobile.png",
+          ".impeccable/review-modules/agent-route-mobile.png",
+          ".impeccable/review-modules/running-desktop.png",
+          ".impeccable/review-modules/running-mobile.png",
+          ".impeccable/review-modules/running-route-mobile.png"
+        ],
+        "scope": "Accepted local interaction prototype; personal values and analyses are fictional. Real research, model inference and Agent runtime are unimplemented."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Daily primary action",
+      "kind": "button",
+      "refersTo": "day-button-primary",
+      "description": "Inherited C primary action; daily-panel contexts reduce text to 12px.",
+      "html": "<button class=\"ds-btn ds-primary\">确认入历</button>",
+      "css": ".ds-btn{font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;border:1px solid var(--line,#bdced7);border-radius:7px;padding:10px 16px;background:var(--paper,#fff);color:var(--ink,#243c50);font-size:14px;font-weight:600;min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:7px;cursor:pointer;transition:background-color 160ms ease-out,border-color 160ms ease-out}.ds-btn:hover{background:var(--soft,#dceee5);border-color:var(--accent,#176552)}.ds-btn:focus-visible{outline:3px solid var(--accent,#176552);outline-offset:4px}.ds-btn:disabled{opacity:.6;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-btn{transition:none}}.ds-primary{background:var(--accent,#176552);border-color:var(--accent,#176552);color:white}.ds-primary:hover{background:var(--accent,#176552);filter:brightness(.94)}"
+    },
+    {
+      "name": "Daily secondary action",
+      "kind": "button",
+      "refersTo": "day-button-secondary",
+      "description": "Paper action for editing and cancelling proposals.",
+      "html": "<button class=\"ds-btn\">放弃草案</button>",
+      "css": ".ds-btn{font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;border:1px solid var(--line,#bdced7);border-radius:7px;padding:10px 16px;background:var(--paper,#fff);color:var(--ink,#243c50);font-size:14px;font-weight:600;min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:7px;cursor:pointer;transition:background-color 160ms ease-out,border-color 160ms ease-out}.ds-btn:hover{background:var(--soft,#dceee5);border-color:var(--accent,#176552)}.ds-btn:focus-visible{outline:3px solid var(--accent,#176552);outline-offset:4px}.ds-btn:disabled{opacity:.6;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-btn{transition:none}}"
+    },
+    {
+      "name": "Daily text action",
+      "kind": "button",
+      "refersTo": "day-button-text",
+      "description": "Inherited transparent tertiary action.",
+      "html": "<button class=\"ds-btn ds-text\">查看详情</button>",
+      "css": ".ds-btn{font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;border:1px solid var(--line,#bdced7);border-radius:7px;padding:10px 16px;background:var(--paper,#fff);color:var(--ink,#243c50);font-size:14px;font-weight:600;min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:7px;cursor:pointer;transition:background-color 160ms ease-out,border-color 160ms ease-out}.ds-btn:hover{background:var(--soft,#dceee5);border-color:var(--accent,#176552)}.ds-btn:focus-visible{outline:3px solid var(--accent,#176552);outline-offset:4px}.ds-btn:disabled{opacity:.6;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-btn{transition:none}}.ds-text{background:transparent;border-color:transparent;color:var(--accent,#176552);padding-inline:8px}"
+    },
+    {
+      "name": "Native time field",
+      "kind": "input",
+      "refersTo": "day-field",
+      "description": "The calendar editor provides a native alternative to dragging.",
+      "html": "<label class=\"ds-field\">开始<input type=\"time\" required min=\"08:00\" max=\"21:59\" value=\"11:00\"></label>",
+      "css": ".ds-field{font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;display:grid;gap:6px;font-size:12px;font-weight:600;color:var(--ink,#243c50)}.ds-field input{font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;width:100%;background:var(--paper,#fff);border:1px solid var(--line,#bdced7);border-radius:6px;padding:9px 10px;color:var(--ink,#243c50);min-height:44px;font-size:14px;caret-color:var(--accent,#176552)}.ds-field input:focus-visible{outline:3px solid var(--accent,#176552);outline-offset:4px}"
+    },
+    {
+      "name": "Daily navigation",
+      "kind": "nav",
+      "refersTo": "day-navigation",
+      "description": "Shared daily/module navigation; the module overview is the initial view and the historical variant switcher stays separate.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"主导航\"><button class=\"ds-active\" aria-current=\"page\">今日</button><button>成长总览</button></nav>",
+      "css": ".ds-nav{display:flex;gap:25px;background:#fff;height:74px}.ds-nav button{font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;border:0;border-bottom:2px solid transparent;background:transparent;font-size:14px;color:var(--ink,#243c50);cursor:pointer;transition:background-color 160ms ease-out,border-color 160ms ease-out}.ds-nav .ds-active{border-bottom-color:#176552;color:#176552;font-weight:650}.ds-nav button:focus-visible{outline:3px solid var(--accent,#176552);outline-offset:4px}@media(max-width:850px){.ds-nav{gap:18px;height:64px}.ds-nav button{min-height:44px}}@media(prefers-reduced-motion:reduce){.ds-nav button{transition:none}}"
+    },
+    {
+      "name": "Prototype status tag",
+      "kind": "chip",
+      "refersTo": "day-tag",
+      "description": "Written status inside header chrome.",
+      "html": "<span class=\"ds-tag\">可试玩原型</span>",
+      "css": ".ds-tag{font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;display:inline-flex;align-items:center;border:1px solid var(--line,#bdced7);border-radius:5px;padding:3px 8px;font-size:12px;color:var(--ink,#243c50);white-space:normal}@media(max-width:850px){.ds-tag{font-size:10px}}"
+    },
+    {
+      "name": "Conversation work surface",
+      "kind": "card",
+      "refersTo": "day-panel",
+      "description": "Flat divided panel for state-dependent guidance.",
+      "html": "<aside class=\"ds-panel\"><div class=\"ds-panel-head\"><span class=\"ds-dot\"></span><h2>Jarvis</h2><small>与你一起安排今天</small></div><div class=\"ds-panel-content\"><h3>看一眼改动，再确认入历</h3><p>日历右侧是草案，左侧仍是当前安排。</p></div></aside>",
+      "css": ".ds-panel{font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;background:#fff;border:1px solid #bfced8;border-radius:10px;overflow:hidden;min-width:0;color:var(--ink,#243c50)}.ds-panel-head{padding:17px 19px;border-bottom:1px solid #d4dfe5;display:flex;align-items:center;gap:9px}.ds-panel-head h2{font-size:17px;line-height:1.35;letter-spacing:-.02em;margin:0}.ds-panel-head small{margin-left:auto;font-size:10px;color:#50677a}.ds-dot{height:9px;width:9px;background:#176552;border-radius:50%;margin-right:2px}.ds-panel-content{padding:18px}.ds-panel-content h3{font-size:16px;font-weight:650;line-height:1.35;margin:0}.ds-panel-content p{font-size:13px;line-height:1.85;color:#50677a;margin:9px 0 0;overflow-wrap:anywhere}@media(max-width:850px){.ds-panel-head{padding:13px 16px}.ds-panel-content{padding:16px}.ds-panel-content h3{font-size:15px}.ds-panel-content p{font-size:12px}}"
+    },
+    {
+      "name": "Contextual composer",
+      "kind": "input",
+      "refersTo": "day-composer",
+      "description": "Focus is shown on the enclosing composer; sending remains an explicit action.",
+      "html": "<div class=\"ds-composer\"><textarea aria-label=\"告诉 Jarvis 今天的安排或完成情况\" maxlength=\"5000\" placeholder=\"今晚 19 点到 20 点家庭聚餐…\"></textarea><div class=\"ds-composer-footer\"><span>描述约束、改时间或补进展</span><button class=\"ds-btn ds-primary\" type=\"button\">发送</button></div></div>",
+      "css": ".ds-btn{font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;border:1px solid var(--line,#bdced7);border-radius:7px;padding:10px 16px;background:var(--paper,#fff);color:var(--ink,#243c50);font-size:14px;font-weight:600;min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:7px;cursor:pointer;transition:background-color 160ms ease-out,border-color 160ms ease-out}.ds-btn:hover{background:var(--soft,#dceee5);border-color:var(--accent,#176552)}.ds-btn:focus-visible{outline:3px solid var(--accent,#176552);outline-offset:4px}.ds-btn:disabled{opacity:.6;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-btn{transition:none}}.ds-primary{background:var(--accent,#176552);border-color:var(--accent,#176552);color:white}.ds-primary:hover{background:var(--accent,#176552);filter:brightness(.94)}.ds-composer{font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;margin-top:12px;border:1px solid #a9bdca;border-radius:8px;padding:10px;background:#fff}.ds-composer:focus-within{outline:2px solid #176552;outline-offset:1px}.ds-composer textarea{font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;display:block;width:100%;border:0;outline:none;resize:vertical;min-height:92px;font-size:13px;line-height:1.75;background:transparent;color:#253d50}.ds-composer textarea:focus-visible{outline:none}.ds-composer textarea::placeholder{color:#50677a;opacity:1}.ds-composer-footer{display:flex;align-items:center;justify-content:space-between;margin-top:8px;gap:8px;font-size:10px;color:#50677a}.ds-composer-footer .ds-btn{min-height:36px;padding:7px 12px;font-size:12px}@media(max-width:850px){.ds-composer textarea{min-height:72px}}"
+    },
+    {
+      "name": "Calendar event states",
+      "kind": "custom",
+      "refersTo": "day-event",
+      "description": "Fixed and proposed time keep separate written state and border treatments.",
+      "html": "<div class=\"ds-events\"><button class=\"ds-event\" aria-label=\"专注工作，09:00 到 10:00，已入历\"><strong>专注工作</strong><small>09:00–10:00</small></button><button class=\"ds-event ds-proposed\" aria-label=\"实现梯度累加的小实验，11:00 到 11:45，待确认改动\"><strong>实现梯度累加的小实验</strong><small>11:00–11:45 · 40 XP 上限</small></button></div>",
+      "css": ".ds-events{position:relative;height:132px}.ds-event{font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;position:absolute;z-index:2;left:5px;right:7px;top:0;height:69px;border:1px solid #a9bfd0;border-radius:5px;background:#e9f0f8;color:#294761;padding:4px 7px;text-align:left;overflow:hidden;min-height:21px;line-height:1.25;cursor:pointer;font-size:11px;box-shadow:none;transition:background-color 160ms ease-out,border-color 160ms ease-out}.ds-event strong{display:block;font-size:12px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ds-event small{display:block;margin-top:4px;font-size:10px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.ds-event.ds-proposed{top:75px;height:51px;border:1px dashed #936b29;background:#faf2df;color:#725019}.ds-event:focus-visible{outline:3px solid var(--accent,#176552);outline-offset:4px}@media(prefers-reduced-motion:reduce){.ds-event{transition:none}}"
+    },
+    {
+      "name": "Selected capability node",
+      "kind": "custom",
+      "refersTo": "day-capability-node",
+      "description": "Earlier daily-refinement topology preview, preserved as history; current growth navigation opens the module ledger and shared detail.",
+      "html": "<div class=\"ds-map\"><button class=\"ds-node ds-selected\"><strong>反向传播实现</strong><small>待验证</small></button></div>",
+      "css": ".ds-map{position:relative;height:150px;background:#edf5f4;border:1px solid #c9dcd6;border-radius:8px}.ds-node{font-family:\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:12px 16px;min-width:116px;min-height:67px;border:1px solid #a8c3b6;border-radius:7px;background:white;color:var(--ink,#243c50);text-align:left;font-size:13px;cursor:pointer;transition:background-color 160ms ease-out,border-color 160ms ease-out}.ds-node:focus-visible{outline:3px solid var(--accent,#176552);outline-offset:4px}.ds-node.ds-selected{outline:2px solid #176552;outline-offset:2px}.ds-node strong,.ds-node small{display:block}.ds-node small{font-size:11px;color:#50677a;margin-top:5px}@media(max-width:850px){.ds-node{min-width:96px;padding:10px}.ds-node strong{font-size:12px}.ds-node small{font-size:10px}}@media(prefers-reduced-motion:reduce){.ds-node{transition:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Jarvis daily workspace — C 证据工坊 × A 成长图谱",
+    "overview": "The user explicitly prefers C’s evidence workshop with A’s capability graph and quantified gaps. The default `index.html` now opens a unified module overview, with shared module details and the daily calendar available from the same shell. Calendar editing, contextual conversation, reviewable proposals and progress evidence remain one connected workspace. C supplies the slate, ink and emerald document character; A supplies the visible capability topology. This is an accepted prototype direction, not approval of a production identity or runtime integration.\n\nThe original fifteen A/B/C views remain at `variants.html`, backed by `app.js`, `styles.css` and `model.js`. Their palettes and signature structures remain valid historical comparison material. They do not require the new workspace to keep its calendar, conversation and graph in separate candidate worlds. The current module composition is recorded in `.impeccable/surfaces/module-atlas.md`; `.impeccable/surfaces/agent-day.md` records the earlier daily refinement, and `.impeccable/surfaces/game-lab.md` records the original comparison phase, including its then-pending preference verdict.",
+    "keyCharacteristics": [
+      "C’s pale slate, white paper, ink blue and evidence green anchor the default workspace.",
+      "A’s capability topology connects an explicit gap to a proposed daily action.",
+      "Shared module ledgers and evidence documents keep standing, comparable gaps and stage routes legible across different growth directions.",
+      "Calendar and conversation share the selected object; proposed changes remain visibly distinct from accepted time.",
+      "Chinese system typography, compact supporting text and tabular quantities support an operational surface.",
+      "Text accompanies event and evidence states; controls retain visible keyboard focus.",
+      "CSS and inline SVG carry the visuals; no raster assets, external fonts or new dependencies ship."
+    ],
+    "rules": [
+      {
+        "name": "Accepted Direction",
+        "body": "Use C’s evidence palette with A’s capability topology for the default daily workspace. Preserve the original A/B/C variants as comparison history; the accepted prototype preference does not imply production approval.",
+        "section": "colors"
+      },
+      {
+        "name": "Readable State",
+        "body": "Retain written event, proposal and evidence states alongside color, borders and the semantic state attributes present on controls.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "Do use C’s evidence palette with A’s capability topology in the default workspace.",
+      "Do preserve the original A/B/C palettes and views as historical comparison material.",
+      "Do retain visible control focus, labeled native fields, written state and reduced-motion behavior.",
+      "Do keep current time, proposed time, evidence, XP and measurements visibly distinguishable.",
+      "Do expose prototype and simulated-data status without claiming a connected model or calendar service."
+    ],
+    "donts": [
+      "Don’t describe the user’s C-plus-A preference as pending, or require the accepted workspace to remain three separate candidates.",
+      "Don’t treat accepted prototype direction as production identity or runtime approval.",
+      "Don’t introduce external fonts or raster imagery into this record; neither ships in the prototype.",
+      "Don’t turn compact 10px metadata or removed decorative heading badges into general-purpose typography patterns."
+    ]
+  }
+}

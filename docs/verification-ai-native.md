@@ -1,0 +1,55 @@
+# AI-native 成长远征与 checkpoint 协商：验证记录
+
+2026-10-02。原型分支 `prototype/ai-native-journey`，工作树 `/tmp/jarvis-ai-native`，预览 http://127.0.0.1:5180/ 。以下为实际运行结果，不代表真实模型、外部日历或专业效果验证。
+
+## 可复跑检查
+
+```sh
+node check-feedback.mjs
+node check-journey.mjs
+node check-day.mjs
+node check-modules.mjs
+node check.mjs
+# 先在另一个终端启动 python3 serve.py；需要已安装的 agent-browser。
+python3 check-browser.py
+python3 check-feedback-browser.py
+```
+
+| 检查 | 结果 | 覆盖 |
+| --- | --- | --- |
+| `check-feedback.mjs` | 通过 | 榜样与 gap 联动、时间基线修正与未知、两轮阶段协商、容量、过期守卫、撤销、跨页面对象标识、能力撤回、XP 保留、输入与证据边界 |
+| `check-journey.mjs` | 通过 | 难度合约、检查点份额、重复奖励、最小产物与完整能力分离、背景来源、未知与恢复 |
+| `check-day.mjs` | 通过 | 草案／确认、中文时间、日历冲突、版本、部分进展、自述与验收 |
+| `check-modules.mjs` | 通过 | 模块口径、未知分数、来源与比较、分析／确认、路线调整、新模块、暂停 |
+| `check.mjs` | 通过 | 既有计划、精力、证据前置、重复 XP、纪念与现实测量规则 |
+| `check-browser.py` | **28 项通过** | 今日任务选择、合约、部分结算、最小→标准、证据解锁、背景过期、低容量、新模块、手机与键盘 |
+| `check-feedback-browser.py` | **35 项通过** | 榜样、差距、独立草稿、两轮协商、真实前后对比、拒绝、确认、撤销、过期修订、背景纠正、每个检查点、澄清、验收撤回、关卡重算、手机／键盘／焦点 |
+
+两条浏览器流程都无未捕获错误。`git diff --check` 通过；入口、`feedback.js`、`journey.css` 与新研究报告 HTTP 返回 200。
+
+## 实际检查的产品不变量
+
+- 榜样讨论携带人物／作品、公开来源、个人背景与比较范围。采用 Gary 后改看频率 gap；Kipchoge 仍仅是同距离成绩参照。
+- 基线修正先显示差异，确认后才修改原模块；未知保持 null；错误时间格式被拒绝。
+- 两轮修改保留同一候选，修改前列始终是真实原对象，不把上一轮草案冒充已确认值。
+- 各对象保留自己的草稿、对话与待确认提案；同一背景或证据跨页面引用同一标识。
+- 解释与拒绝不改变有效对象；确认才更新共享模块／日历；没有因为聊天次数增加 XP。
+- 背景、模块、有效日历或草案变化会使旧修订过期。确认后的其他变更也会阻止全局快照撤销，避免覆盖新事实／奖励。
+- 撤回完整能力模拟验收后，记录退回自述，行动 XP 保留，gap 与前置关卡重新计算。
+- 自述不能通过更改能力基线直接获得完整掌握；最小合约不能冒充完整能力。
+- 320px 的讨论面板及其底层页面无横向溢出；原流程也检查 390px 今日、总览与顾问页。
+- Escape 关闭原生 dialog 并返回来源入口；Ctrl／⌘ + Enter 可发送；输入区保持可见，提案内容单独滚动。
+
+## 视觉检查
+
+已查看桌面今日、成长总览、证据与复盘区域，以及桌面／320px 协商面板截图。修正了新增入口造成的证据区网格错位、嵌套检查点 label 样式与开始锚点换行。新入口不依赖 hover，不引入动效；已有 reduced-motion 规则保留。
+
+本机截图：`/tmp/jarvis-upgraded-today.png`、`/tmp/jarvis-upgraded-growth.png`、`/tmp/jarvis-feedback-desktop.png`、`/tmp/jarvis-feedback-mobile.png`、`/tmp/jarvis-evidence-layout.png`。截图是本机审查产物，临时目录清理后可重新生成。
+
+## 可用范围与上限
+
+这是本地有限规则与虚构个人背景的交互原型，刷新清空；未接真实 LLM、BuilderIO runtime、私人记忆或外部日历。模拟验收按钮未运行真实代码或健康测量。
+
+固定评分权重与 XP 规则可以解释／收集偏好，不支持任意调整；阶段文字变更保留具体任务合约。真实语义理解、任意替代路线与专业成果复核需接真实 Agent，并沿用对象、版本、证据与明确采用边界。本轮没有新增运行依赖。
+
+书籍与论文读取范围见 [游戏化研究](ai-native-gamification.md)；应用与反馈的原始依据及访问限制见 [AI-native 反馈研究](ai-native-feedback-design.md)。本轮不是随机试验，不声称提高了多巴胺、长期坚持率或生活能力。
