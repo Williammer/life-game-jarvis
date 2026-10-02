@@ -1,3 +1,4 @@
+import {challenge} from './journey.js';
 import { fresh, task, act, progression } from './model.js';
 
 export const START=480, END=1320;
@@ -5,6 +6,7 @@ export const clock=m=>`${String(Math.floor(m/60)).padStart(2,'0')}:${String(m%60
 export const minutes=s=>{const [h,m]=s.split(':').map(Number);return h*60+m;};
 const clone=s=>structuredClone(s);
 const uid=()=>globalThis.crypto.randomUUID();
+export const finished=(core,id,contracts=core.contracts)=>core.records[id]?.status==='done'&&(!contracts?.[id]||contracts[id].variant===core.records[id].contract?.variant);
 export function newDay(){return {core:fresh(),revision:0,events:[
   {id:'work-am',title:'专注工作',start:540,end:600,kind:'fixed'},
   {id:'meeting',title:'项目会议',start:600,end:660,kind:'fixed'},
@@ -68,8 +70,8 @@ export function parse(text,s){text=String(text).trim().slice(0,5000);const norma
 function chooseSlot(events,duration,now,preferred){const free=gaps(events,Math.max(START,now),END).filter(([a,b])=>b-a>=duration);if(!free.length)return null;const after=free.find(([a,b])=>Math.max(a,preferred)+duration<=b);const slot=after||free[0];const start=after?Math.max(slot[0],preferred):slot[0];return [start,start+duration];}
 export function propose(s,extraction={},reason='按今天的约束重新安排',baseRevision=s.revision){
   const currentDraft=s.proposal?.baseRevision===s.revision?s.proposal:null;const baseEvents=currentDraft?.events||s.events;
-  const ctx={...s.core,...currentDraft?.context,...extraction.context};const focus=extraction.context?.focus||currentDraft?.focus||s.focus;
-  const added=extraction.events||[];let events=baseEvents.filter(e=>!e.taskId||s.core.records[e.taskId]?.status==='done').map(clone);
+  const ctx={...s.core,...currentDraft?.context,...extraction.context};const contracts={...s.core.contracts,...currentDraft?.contracts,...extraction.contracts};const focus=extraction.context?.focus||currentDraft?.focus||s.focus;
+  const added=extraction.events||[];let events=baseEvents.filter(e=>!e.taskId||finished(s.core,e.taskId,contracts)).map(clone);
   // Identical stated obligations replace their previous occurrence, rather than duplicating a meeting.
   for(const event of added){events=events.filter(e=>e.title!==event.title);events.push(event);}
   if(extraction.remove)events=events.filter(e=>e.id!==extraction.remove);
@@ -79,11 +81,14 @@ export function propose(s,extraction={},reason='按今天的约束重新安排',
     const requested=r.taskIds.find(id=>extraction.taskIds?.includes(id));
     return requested||(ctx.fatigue&&r.fatigueTaskId)||[r.defaultTaskId,...r.taskIds].find(id=>s.core.records[id]?.status!=='done')||r.defaultTaskId;
   }):[ai,health,'family'];if(extraction.taskIds)ids.unshift(...extraction.taskIds);else if(!s.moduleRoutes&&focus==='review'&&!ids.includes('review'))ids.unshift('review');
-  const notes=[...(extraction.notes||[])],deferred=[];let used=events.filter(e=>e.taskId&&s.core.records[e.taskId]?.status!=='done').reduce((n,e)=>n+e.end-e.start,0),energy=events.filter(e=>e.taskId&&s.core.records[e.taskId]?.status!=='done').reduce((n,e)=>n+task(e.taskId).energy,0);
+  if(s.moduleRoutes)for(const id of ids)if(!contracts[id])contracts[id]=challenge(id);
+  const notes=[...(extraction.notes||[])],deferred=[];let used=events.filter(e=>e.taskId&&!finished(s.core,e.taskId,contracts)).reduce((n,e)=>n+e.end-e.start,0),energy=events.filter(e=>e.taskId&&!finished(s.core,e.taskId,contracts)).reduce((n,e)=>n+(contracts[e.taskId]||task(e.taskId)).energy,0);
   for(const id of [...new Set(ids)]){
-    const t=task(id),record=s.core.records[id];if(record?.status==='done'||events.some(e=>e.taskId===id)||baseEvents.some(e=>e.id===extraction.remove&&e.taskId===id))continue;
+    const t={...task(id),...contracts[id]},record=s.core.records[id];if(finished(s.core,id,contracts)||events.some(e=>e.taskId===id)||baseEvents.some(e=>e.id===extraction.remove&&e.taskId===id))continue;
     if(s.moduleRoutes&&!s.moduleRoutes.some(r=>r.taskIds.includes(id)))continue;
-    const needed=record?.status==='partial'?Math.max(15,t.minutes-record.minutes):t.minutes;
+    // ponytail: checkpoint share estimates remaining time; a grounded Agent can recalibrate from actual attempts.
+    const remaining=record?.checkpoints&&t.checkpoints?t.minutes*(1-record.checkpoints.filter(id=>t.checkpoints.some(c=>c.id===id)).length/t.checkpoints.length):t.minutes-(record?.minutes||0);
+    const needed=record?.status==='partial'&&(!contracts[id]||record.contract?.variant===contracts[id].variant)?Math.max(Math.min(15,t.minutes),Math.ceil(remaining)):t.minutes;
     if(used+needed>ctx.budget||energy+t.energy>ctx.energy){deferred.push(`${t.name}：超过今天的时间或精力上限`);continue;}
     const preferred=id==='family'?1110:id==='recover'||id==='run'?1020:660;
     const slot=chooseSlot(events,needed,s.now,preferred);
@@ -93,16 +98,16 @@ export function propose(s,extraction={},reason='按今天的约束重新安排',
   notes.unshift(ctx.fatigue?'你提到疲劳：优先尝试恢复任务，保留调整权。':'未标记疲劳：把轻松活动作为候选，不自动提升健康指标。');
   if(s.moduleRoutes)notes.push('按启用模块的下一任务与现有证据排入空档；现状分、榜样与日历共享模块身份。');else notes.push(ai==='review'?'已有模拟实现证据，下一步补数值验证。':ai==='read'?'按你优先补概念的意愿，安排一段能留下解释的阅读。':'目前缺少可运行实现的证据，先保护一段实践时间；不把阅读与实践机械五五分。');
   if(s.core.records[ai]?.status==='partial')notes.push('已做过的部分保留，本次只安排剩余时间。');
-  return {baseRevision,events:events.sort((a,b)=>a.start-b.start),context:{...currentDraft?.context,...extraction.context},focus,reason,notes,deferred,questions:extraction.questions||[],used,energy,source:extraction.source||'local'};
+  return {baseRevision,contracts,events:events.sort((a,b)=>a.start-b.start),context:{...currentDraft?.context,...extraction.context},focus,reason,notes,deferred,questions:extraction.questions||[],used,energy,source:extraction.source||'local'};
 }
-export function planIssues(events,core){const pending=events.filter(e=>e.taskId&&core.records[e.taskId]?.status!=='done');const used=pending.reduce((n,e)=>n+e.end-e.start,0),energy=pending.reduce((n,e)=>n+task(e.taskId).energy,0);return [...conflicts(events),...(used>core.budget?['成长任务超过时间预算，请缩短或调整']:[]),...(energy>core.energy?['成长任务超过精力预算，请调整']:[])];}
-export function proposalIssues(s){if(!s.proposal)return ['还没有待确认提案'];return [...(s.proposal.baseRevision!==s.revision?['日历或证据已变化，请让 Jarvis 基于最新版重排']:[]),...planIssues(s.proposal.events,{...s.core,...s.proposal.context}),...s.proposal.questions];}
-export function accept(s){const next=clone(s),errors=proposalIssues(s);if(errors.length){next.notice=errors.join('；');return next;}next.lastPlan=clone(s.events);next.events=clone(s.proposal.events);next.core={...next.core,...s.proposal.context};delete next.core.focus;next.focus=s.proposal.focus||s.focus;next.core.active=next.events.filter(e=>e.taskId).map(e=>e.taskId);next.core.draft=[...next.core.active];next.revision++;next.core.revision=next.revision;next.proposal=null;next.waiting=null;next.notice='提案已确认入历。每项任务都带着完成标准，随时可以补录。';return next;}
+export function planIssues(events,core){const pending=events.filter(e=>e.taskId&&!finished(core,e.taskId));const used=pending.reduce((n,e)=>n+e.end-e.start,0),energy=pending.reduce((n,e)=>n+(core.contracts?.[e.taskId]||task(e.taskId)).energy,0);return [...conflicts(events),...(used>core.budget?['成长任务超过时间预算，请缩短或调整']:[]),...(energy>core.energy?['成长任务超过精力预算，请调整']:[])];}
+export function proposalIssues(s){if(!s.proposal)return ['还没有待确认提案'];return [...(s.proposal.baseRevision!==s.revision?['日历或证据已变化，请让 Jarvis 基于最新版重排']:[]),...planIssues(s.proposal.events,{...s.core,...s.proposal.context,contracts:s.proposal.contracts}),...s.proposal.questions];}
+export function accept(s){const next=clone(s),errors=proposalIssues(s);if(errors.length){next.notice=errors.join('；');return next;}next.lastPlan=clone(s.events);next.events=clone(s.proposal.events);next.core={...next.core,...s.proposal.context,contracts:clone(s.proposal.contracts||{})};delete next.core.focus;next.focus=s.proposal.focus||s.focus;next.core.active=next.events.filter(e=>e.taskId).map(e=>e.taskId);next.core.draft=[...next.core.active];next.revision++;next.core.revision=next.revision;next.proposal=null;next.waiting=null;next.notice='提案已确认入历。每项任务都带着完成标准，随时可以补录。';return next;}
 export function editEvent(s,event,remove=false){const next=clone(s);let events=s.events.filter(e=>e.id!==event.id);if(!remove)events.push({...event,id:event.id||uid()});const errors=planIssues(events,s.core);if(errors.length){next.notice=errors.join('；');return next;}next.lastPlan=clone(s.events);next.events=events.sort((a,b)=>a.start-b.start);next.core.active=events.filter(e=>e.taskId).map(e=>e.taskId);next.revision++;next.notice=remove?'已确认移除事项，已保存的进展继续保留。':'日历已更新。此前未确认的提案需要重新分析。';return next;}
-export function record(s,draft,checked=false){const next=clone(s);if(!draft||!task(draft.id)||(!s.core.active.includes(draft.id)&&!s.core.records[draft.id])||String(draft.evidence||'').trim().length<2){next.notice='请先安排任务，并提供至少一句完成情况。';return next;}if(draft.baseRevision!==undefined&&draft.baseRevision!==s.revision){next.notice='记录提案已过期，请重新描述完成情况。';return next;}next.core=act({...s.core,active:[...new Set([...s.core.active,draft.id])]},{...draft,type:'record',proof:checked?'checked':'self'});next.core.active=[...s.core.active];if(!next.core.records[draft.id]){next.notice=next.core.notice;return next;}next.revision++;next.recordDraft=null;next.notice=checked?'已保存模拟验收；没有执行真实代码或验证健康数据。':'完成情况已保存，XP 已重算；能力仍由验收证据决定。';return next;}
+export function record(s,draft,checked=false){const next=clone(s);if(!draft||!task(draft.id)||(!s.core.active.includes(draft.id)&&!s.core.records[draft.id])||String(draft.evidence||'').trim().length<2){next.notice='请先安排任务，并提供至少一句完成情况。';return next;}if(draft.baseRevision!==undefined&&draft.baseRevision!==s.revision){next.notice='记录提案已过期，请重新描述完成情况。';return next;}next.core=act({...s.core,active:[...new Set([...s.core.active,draft.id])]},{...draft,type:'record',proof:checked?'checked':'self'});next.core.active=[...s.core.active];if(!next.core.records[draft.id]){next.notice=next.core.notice;return next;}next.recordHistory=[...(s.recordHistory||[]),{id:draft.id,previous:s.core.records[draft.id]||null,record:clone(next.core.records[draft.id]),revision:s.revision+1}];next.revision++;next.recordDraft=null;next.notice=checked?'已保存模拟验收；没有执行真实代码或验证健康数据。':'完成情况已保存，XP 已重算；能力仍由验收证据决定。';return next;}
 export function nextAction(s){const p=progression(s.core);if(s.proposal)return {title:proposalIssues(s).length?'先解决这份提案中的问题':'看一眼改动，再确认入历',text:proposalIssues(s).join('；')||'日历右侧是草案，左侧仍是当前安排。'};
-  const next=s.events.filter(e=>e.taskId&&s.core.records[e.taskId]?.status!=='done').sort((a,b)=>a.start-b.start)[0];
-  if(next){const t=task(next.taskId),r=s.core.records[t.id];return {title:r?'从上次的检查点继续':`下一步：${t.name}`,text:`${clock(next.start)} · ${next.end-next.start} 分钟。${r?`已记录：${r.evidence}`:t.standard}`,event:next};}
+  const next=s.events.filter(e=>e.taskId&&!finished(s.core,e.taskId)).sort((a,b)=>a.start-b.start)[0];
+  if(next){const t={...task(next.taskId),...s.core.contracts?.[next.taskId]},r=s.core.records[t.id];return {title:r?'从上次的检查点继续':`下一步：${t.name}`,text:`${clock(next.start)} · ${next.end-next.start} 分钟。${r?`已记录：${r.evidence}`:t.standard}`,event:next};}
   if(s.moduleRoutes&&p.completed)return {title:'进展已记录，可以回看模块总览',text:'任务的行动 XP 与模块现状分分别计算；自述完成后仍可补能力证据。'};
   if(p.completed)return {title:p.skills.length<2?'行动完成了，再补一条能力证据':'新的路标已开放',text:p.skills.length<2?'可以先结束今天。之后再验收实现，不会因为有 XP 就自动点亮能力。':'实现已通过模拟验收。下一次的实践可以聚焦数值检查与失败案例。'};
   return {title:'把今天交给一段描述',text:'我会结合固定事项、身体感受与证据缺口，把具体建议排进空档。'};

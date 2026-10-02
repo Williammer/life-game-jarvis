@@ -34,7 +34,7 @@ export function issues(s) {
 export function progression(s) {
   const records=Object.values(s.records);
   const xp=records.reduce((n,r)=>n+r.xp,0);
-  const proven=id=>s.records[id]?.status==='done' && s.records[id]?.proof==='checked';
+  const proven=id=>s.records[id]?.status==='done' && s.records[id]?.proof==='checked' && s.records[id]?.masteryEligible!==false;
   const skills=['计算图解释'];
   if(proven('build')) skills.push('反向传播实现');
   if(proven('review') && proven('build')) skills.push('数值检查');
@@ -67,10 +67,12 @@ export function act(state, action) {
     if(!s.active.includes(action.id)){s.notice='请先确认包含这个任务的计划。';return s;}
     const evidence=String(action.evidence||'').trim();
     if(evidence.length<2){s.notice='请留下实际完成情况，或载入一条示例证据。';return s;}
-    const t=task(action.id),status=action.status==='partial'?'partial':'done';
-    const xp=status==='done'?t.xp:Math.floor(t.xp/2);
+    const t={...task(action.id),...(action.proof==='checked'&&s.records[action.id]?.contract?s.records[action.id].contract:s.contracts?.[action.id])};
+    const checked=Array.isArray(action.checkpoints)&&t.checkpoints? [...new Set(action.checkpoints)].filter(id=>t.checkpoints.some(c=>c.id===id)):null;
+    const status=checked?(checked.length===t.checkpoints.length?'done':'partial'):(action.status==='partial'?'partial':'done');
+    const xp=checked?Math.floor(t.xp*checked.length/t.checkpoints.length):status==='done'?t.xp:Math.floor(t.xp/2);
     const minutes=action.minutes===undefined?t.minutes:Number(action.minutes);
-    s.records[action.id]={status,evidence,proof:action.proof==='checked'?'checked':'self',xp,minutes:Math.max(0,Math.min(480,Number.isFinite(minutes)?minutes:t.minutes))};
+    s.records[action.id]={status,evidence,proof:action.proof==='checked'?'checked':'self',xp,checkpoints:checked,masteryEligible:t.masteryEligible!==false,contract:structuredClone(t),minutes:Math.max(0,Math.min(480,Number.isFinite(minutes)?minutes:t.minutes))};
     s.notice='记录已更新。重复保存只修正这一条，不重复发放 XP。';
   } else if(action.type==='removeRecord') {
     delete s.records[action.id];s.notice='已撤回这条模拟记录，分数与能力证据同步重算。';
