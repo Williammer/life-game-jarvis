@@ -5,7 +5,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 import argparse
 
-PUBLIC = {'/', '/index.html', '/variants.html', '/day.js', '/module-model.js', '/module-ui.js', '/journey.js', '/feedback.js', '/docs/ai-native-feedback-design.md', '/journey-ui.js', '/journey.css', '/modules.css', '/day.css', '/day-model.js', '/app.js', '/model.js', '/styles.css', '/README.md', '/docs/game-design-research.md', '/docs/ai-native-gamification.md'}
+PUBLIC = {'/', '/index.html', '/variants.html', '/day.js', '/module-model.js', '/module-ui.js', '/reference-ui.js', '/docs/reference-sources.md', '/journey.js', '/feedback.js', '/docs/ai-native-feedback-design.md', '/journey-ui.js', '/journey.css', '/modules.css', '/day.css', '/day-model.js', '/app.js', '/model.js', '/styles.css', '/README.md', '/docs/game-design-research.md', '/docs/ai-native-gamification.md'}
 
 class PrototypeHandler(SimpleHTTPRequestHandler):
     def send_head(self):

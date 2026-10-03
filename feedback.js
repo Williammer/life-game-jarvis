@@ -1,4 +1,4 @@
-import {REFERENCES,analyzeModule,proposeModule,confirmModule,gap,score,formatValue,customReference,routes} from './module-model.js';
+import {REFERENCES,analyzeModule,proposeModule,confirmModule,gap,score,formatValue,customReference,routes,assessment,configureReference,referenceSources,referenceSourceText} from './module-model.js';
 import {propose,accept,proposalIssues,parse,clock} from './day-model.js';
 import {challenge,nextMission,advisor,domain,reviewDay,updateContext} from './journey.js';
 import {task} from './model.js';
@@ -11,20 +11,25 @@ const moduleFor=(d,day,modules)=>modules.find(m=>m.id===d.mid)||(['task','checkp
 const stageName=id=>({near:'近期',mid:'中期',long:'长期'}[id]||'阶段');
 const planText=p=>p?`${p.used} 分钟 / ${p.energy} 格精力\n${p.events.filter(e=>e.taskId).map(e=>`${clock(e.start)}–${clock(e.end)} ${e.title}：${p.contracts?.[e.taskId]?.standard||task(e.taskId).standard}`).join('\n')}\n${p.deferred.join('\n')}`:'尚无草案';
 const moduleChanges=(value,patch,original)=>Object.keys(patch).filter(k=>!['assessment','updated'].includes(k)&&JSON.stringify(original[k])!==JSON.stringify(patch[k])).map(k=>{
- const v=value[k];return k==='goal'?`目标：${v}`:k==='benchmark'?`榜样：${v?.name||'暂不采用'}`:k==='metrics'?v.filter(x=>JSON.stringify(original.metrics.find(y=>y.id===x.id))!==JSON.stringify(patch.metrics.find(y=>y.id===x.id))).map(x=>`${x.name}：${formatValue(x.value,x.unit)}`).join('；'):k==='roadmap'?v.filter(x=>JSON.stringify(original.roadmap.find(y=>y.id===x.id))!==JSON.stringify(patch.roadmap.find(y=>y.id===x.id))).map(r=>`${stageName(r.id)}：${r.title}\n验收：${r.standard}`).join('\n'):String(v);
+ const v=value[k];return k==='goal'?`目标：${v}`:k==='benchmark'?`榜样：${referenceSourceText(v)}`:k==='metrics'?v.filter(x=>JSON.stringify(original.metrics.find(y=>y.id===x.id))!==JSON.stringify(patch.metrics.find(y=>y.id===x.id))).map(x=>`${x.name}：${formatValue(x.value,x.unit)}`).join('；'):k==='roadmap'?v.filter(x=>JSON.stringify(original.roadmap.find(y=>y.id===x.id))!==JSON.stringify(patch.roadmap.find(y=>y.id===x.id))).map(r=>`${stageName(r.id)}：${r.title}\n验收：${r.standard}`).join('\n'):String(v);
 }).join('\n')||'内容保留，记录当前确认版本';
+const assessmentText=(m,day)=>{const a=assessment(m,day);return `你：${a.self.label}\n${a.referenceName}：${a.roleModel.label}\n${a.headline}\n领域目标：${a.field.label}（证据覆盖 ${a.domainCoverage}%）`;};
 const currentPlan=day=>`${day.core.budget} 分钟预算 / ${day.core.energy} 格精力 / ${day.core.fatigue?'恢复优先':'未标记疲劳'}\n${day.events.filter(e=>e.taskId).map(e=>`${clock(e.start)}–${clock(e.end)} ${e.title}`).join('\n')||'尚未安排成长任务'}`;
 export function checkpoint(d,day,modules){
  const m=moduleFor(d,day,modules),t=d.item?task(d.item):null;
  let label='这条建议',content='',basis='',tips=[];
- if(d.scope==='benchmark'){
-  label=`${m.name} · 榜样设定`;content=m.benchmark?`${m.benchmark.name}\n${m.benchmark.claim}`:'尚未选择参照';basis=`${m.benchmark?.source||'缺少可信参照'}\n${advisor(m,day).why}\n${advisor(m,day).facts.map(f=>f.label+'：'+f.text).join('\n')}`;tips=[...(REFERENCES[m.id]||[]).map(r=>`改用 ${r.name}`),'暂不采用榜样','为什么适合我？'];
+ if(d.scope==='assessment'){
+  const a=assessment(m,day),x=m.metrics.find(x=>x.id===m.benchmark?.metricId);label=`${m.name} · ${{self:'我的评估',reference:'榜样评估',field:'领域评估',rubric:'评估口径'}[d.item]||'评估'}`;content=assessmentText(m,day);basis=`${a.basis}\n${a.evidence.join('\n')}\n个人背景：${advisor(m,day).facts.map(f=>f.label+'：'+f.text).join('；')}\n凡人境界借用名称，门槛是自定义映射；切换模式不改变事实或证据。`;if(['field','rubric'].includes(d.item))basis+=`\n领域目标按已知分项权重汇总，再除以 10 映射到十分制；未知项单列覆盖率，不按零计入。\n${score(m,day).metrics.map(x=>x.name+'：'+(x.percent===null?'未知':x.percent+'%')+'，权重 '+x.weight+'；'+x.evidence).join('\n')}`;tips=['重新评估','为什么这样判断？',d.item==='self'&&x?`${x.name}改为 ${x.timeFormat==='seconds'?'19.16秒':x.unit==='秒'?'4:10:00':x.value??1}`:'补充背景：…'];
+ }else if(d.scope==='benchmark'){
+  label=`${m.name} · 榜样设定`;content=m.benchmark?`${referenceSourceText(m.benchmark)}\n${m.benchmark.claim}`:'尚未选择参照';basis=`${referenceSourceText(m.benchmark)}\n${advisor(m,day).why}\n${advisor(m,day).facts.map(f=>f.label+'：'+f.text).join('\n')}\n先核验领域相关成果与质量；链接数、粉丝数与提交次数不能直接代表能力。`;tips=[...(REFERENCES[m.id]||[]).map(r=>`改用 ${r.name}`),'重新评估','暂不采用榜样','为什么适合我？'];
+ }else if(d.scope==='reference-source'){
+  const source=referenceSources(m.benchmark).find(x=>x.id===d.item);label=`${m.name} · 榜样资料`;content=source?`${source.title||'公开资料'}\n${source.url}\n${source.note||'尚未说明支持哪项判断'}`:'这条资料已移除，请从当前清单重新选择';basis=`${referenceSourceText(m.benchmark)}\n已收录不代表已读取；身份、成果归属、日期、领域相关性和可信度需核验。`;tips=['为什么这样判断？','链接改为…','移除这条资料'];
  }else if(d.scope==='gap'&&d.item==='rubric'){
   label=`${m.name} · 评分口径`;content=m.metrics.map(x=>`${x.name}：权重 ${x.weight}，目标 ${formatValue(x.target,x.unit)}`).join('\n');basis='各模块使用自己的演示量表，不做跨领域排名。未知项单列覆盖率；任务自述与能力验收分开。';tips=['为什么这样判断？','补充背景：我希望目标更重视…'];
  }else if(d.scope==='gap'||d.scope==='metric'){
   const x=m.metrics.find(x=>x.id===d.item)||m.metrics.find(x=>x.id===m.benchmark?.metricId)||m.metrics[0];
   label=`${m.name} · ${d.scope==='gap'?'差距分析':x.name}`;content=d.scope==='gap'?`${gap(m,day).headline}\n${gap(m,day).current} → ${gap(m,day).target}`:`${x.name}：${formatValue(score(m,day).metrics.find(y=>y.id===x.id).value,x.unit)}；目标 ${formatValue(x.target,x.unit)}`;
-  basis=`${x.evidence}\n未知不计为零；自述不能自动证明完整能力。`;tips=['为什么这样判断？',`${x.name}未知`,x.unit==='秒'?`${x.name}改为 4:10:00`:`${x.name}改为 ${x.value??1}`];
+  basis=`${x.evidence}\n未知不计为零；自述不能自动证明完整能力。`;tips=['为什么这样判断？',`${x.name}未知`,x.timeFormat==='seconds'?`${x.name}改为 19.16秒`:x.unit==='秒'?`${x.name}改为 4:10:00`:`${x.name}改为 ${x.value??1}`];
  }else if(d.scope==='goal'){
   label=`${m.name} · 成长目标`;content=m.goal;basis='目标由本人决定，评分与能力验收需另行讨论。';tips=['目标改为…','补充背景：…','为什么适合我？'];
  }else if(d.scope==='roadmap'){
@@ -43,12 +48,13 @@ export function checkpoint(d,day,modules){
  }else if(d.scope==='review'){
   const r=reviewDay(modules,day);label={planning:'每日安排评估',completion:'完成度评估',learning:'复盘与下一步'}[d.item]||'营地复盘';content=d.item==='planning'?r.planning:d.item==='completion'?r.completion:`${r.learning}\n${r.suggestion}`;basis='未记录保持未知；完成部分与难度来自自述，不自动推断原因。';tips=['为什么这样判断？','下次改为最小一步','补充背景：实际原因是…'];
  }else if(d.scope==='proposal'&&m){
-  label=`${m.name} · 当前修订提案`;content=m.proposal?`${m.proposal.baseRevision!==m.revision||m.proposal.dayRevision!==undefined&&m.proposal.dayRevision!==day.revision?'原提案已过期，须基于当前资料重评。\n':''}${moduleChanges({...m,...m.proposal.patch},m.proposal.patch,m)}`:'尚无提案';basis=m.proposal?.reason||'可以先讨论目标或参照';tips=['目标改为…','为什么这样判断？'];
+  label=`${m.name} · 当前修订提案`;content=m.proposal?`${m.proposal.baseRevision!==m.revision||m.proposal.dayRevision!==undefined&&m.proposal.dayRevision!==day.revision?'原提案已过期，须基于当前资料重评。\n':''}${moduleChanges({...m,...m.proposal.patch},m.proposal.patch,m)}\n${assessmentText({...m,...m.proposal.patch},day)}`:'尚无提案';basis=m.proposal?.reason||'可以先讨论目标或参照';tips=['目标改为…','为什么这样判断？'];
  }else if(d.scope==='plan'&&d.item==='anchor'){
   label='开始锚点';content=day.core.startAnchor||'候选：午饭后，打开上一轮作品，先做第一个检查点。';basis='实施意图是可修改的开始线索，不保证习惯自动形成。';tips=['锚点改为…','补充背景：…','为什么这样安排？'];
  }else{
   label=d.scope==='proposal'?'今日计划草案':'今日判断与规划';content=d.scope==='proposal'?planText(day.proposal):currentPlan(day);basis='先避开固定事项，再按容量、精力与前置能力证据安排。';tips=['今天只有 45 分钟','改为最小一步','为什么这样安排？'];
  }
+ if(d.scope==='assessment')basis+=`\n榜样基础资料：\n${referenceSourceText(m.benchmark)}`;
  return {...d,key:feedbackKey(d),label,content,basis,tips,version:versions(day,modules)};
 }
 
@@ -59,7 +65,7 @@ export function reply(d,text,day,modules,thread={}){
  const pending=thread.proposal?.base===base?thread.proposal:d.scope==='proposal'&&m?.proposal?.baseRevision===m.revision&&(m.proposal.dayRevision===undefined||m.proposal.dayRevision===day.revision)?{kind:'module',mid:m.id,patch:m.proposal.patch,reason:m.proposal.reason,base,before:moduleChanges(m,m.proposal.patch,m),after:moduleChanges({...m,...m.proposal.patch},m.proposal.patch,m)}:null;
  const working=m&&pending?.kind==='module'?{...m,...pending.patch}:m;
  const proposal=(kind,data,before,after)=>({kind,...data,base,before,after,reason:text});
- const modulePatch=(patch,before,after)=>{const combined={...(pending?.patch||{}),...patch};return {text:'已整理为修订提案。你可以继续修改、拒绝或确认；确认后才更新这里的内容。',proposal:proposal('module',{mid:m.id,patch:combined},moduleChanges(m,combined,m)+('benchmark' in combined||'metrics' in combined?'\n可比差距：'+gap(m,day).headline:''),moduleChanges({...m,...combined},combined,m)+('benchmark' in combined||'metrics' in combined?'\n可比差距：'+gap({...m,...combined},day).headline:''))};};
+ const modulePatch=(patch,before,after)=>{const combined={...(pending?.patch||{}),...patch};return {text:'已整理为修订提案。你可以继续修改、拒绝或确认；确认后才更新这里的内容。',proposal:proposal('module',{mid:m.id,patch:combined},moduleChanges(m,combined,m)+((d.scope==='assessment'||d.scope==='proposal')?'\n'+assessmentText(m,day):'')+('benchmark' in combined||'metrics' in combined?'\n可比差距：'+gap(m,day).headline:''),moduleChanges({...m,...combined},combined,m)+((d.scope==='assessment'||d.scope==='proposal')?'\n'+assessmentText({...m,...combined},day):'')+('benchmark' in combined||'metrics' in combined?'\n可比差距：'+gap({...m,...combined},day).headline:''))};};
  if(/…|\.\.\./.test(text))return {text:'把省略号替换为你的具体内容再发送。比如“近期改为先做一个只读提案”。'};
  if(/^(?:为什么|解释)|为什么必要/.test(text)){const proposed=pending?.kind==='module'?checkpoint(d,day,modules.map(x=>x.id===m.id?working:x)):pending?.kind==='day'?{...c,content:planText(pending.plan)}:c;return {text:`针对「${c.label}」：${proposed.basis}\n${pending?'正在讨论的候选，尚未生效':'当前采用的内容'}：${proposed.content}\n你可以指出哪个前提不符合实际；我会先修正前提，再形成候选方案。`,proposal:pending};}
  const background=text.match(/^(?:补充背景|实际原因是)[：:\s]*(.+)/s);
@@ -68,7 +74,19 @@ export function reply(d,text,day,modules,thread={}){
   const f=day.personal.facts.find(f=>f.id===d.item),correction=text.match(/^背景改为[：:\s]*(.+)/s),disable=/不适用|停用/.test(text),enable=/恢复使用/.test(text);
   if(correction||disable||enable){const value=correction?.[1].trim();if(value&&(value.length<6||value.length>600))throw Error('背景请使用 6–600 个字。');return {text:'修改只影响这条背景，确认后使旧评估过期。',proposal:proposal('fact',{item:f.id,patch:correction?{text:value,source:'本人更正 · 待专业评估',date:'2026-10-02'}:{enabled:enable}},f.text+(f.enabled?'（启用）':'（停用）'),value||`${f.text}（${enable?'启用':'停用'}）`)};}
  }
- if(d.scope==='benchmark'){
+ if(['assessment','proposal','benchmark','reference-source'].includes(d.scope)&&/重新评估|重新分析|重评/.test(text)){const analyzed=analyzeModule(working,day,working.benchmark).proposal.patch;const result=modulePatch(analyzed);result.text='已依据当前个人背景、指标与证据重新评估，并生成可审阅提案。证据相同的维度保留原判断，不因重评次数增加分数或能力。新资料待读取与核验，不据链接数量加分。';return result;}
+ if(d.scope==='reference-source'){
+  const sources=referenceSources(working.benchmark),source=sources.find(x=>x.id===d.item);if(!source)return {text:'这条资料已移除，请从当前清单选择要讨论的来源。'};
+  const correction=text.match(/^链接改为[：:\s]*(https?:\/\/\S+)$/),remove=/^移除这条资料$/.test(text);
+  if(correction||remove){const updated=remove?sources.filter(x=>x.id!==d.item):sources.map(x=>x.id===d.item?{...x,url:correction[1]}:x);const reference=configureReference(working.benchmark,working.benchmark.name,updated,working.benchmark);return modulePatch(analyzeModule(working,day,reference).proposal.patch);}
+  return {text:'可以用“链接改为 https://…”纠正地址，或“移除这条资料”。标题、领域说明和更多链接可在榜样资料表单中修改。来源核验与专业判断仍待真实 Agent 读取。',proposal:pending};
+ }
+ if((d.scope==='benchmark'||['assessment','proposal'].includes(d.scope)&&d.item==='reference')&&/^补充资料/.test(text)){
+  if(!working.benchmark)return {text:'先在榜样资料表单中填写人物或作品名称，再补充公开链接。'};
+  const urls=text.match(/https?:\/\/[^\s]+/g)||[];if(!urls.length)throw Error('请在“补充资料”后提供完整的公开链接');
+  const reference=configureReference(working.benchmark,working.benchmark.name,[...referenceSources(working.benchmark),...urls.map(url=>({url}))],working.benchmark);return modulePatch(analyzeModule(working,day,reference).proposal.patch);
+ }
+ if(d.scope==='benchmark'||['assessment','proposal'].includes(d.scope)&&d.item==='reference'){
   if(/暂不采用|取消榜样/.test(text))return modulePatch({benchmark:null,assessment:null},m.benchmark?.name||'无参照','暂不采用榜样；差距保持待定义');
   const ref=(REFERENCES[m.id]||[]).find(r=>text.toLowerCase().includes(r.name.toLowerCase())||text.toLowerCase().includes(r.id));
   const custom=text.match(/^榜样改为[：:\s]*(.+?)\s+(https?:\/\/\S+)$/);
@@ -76,20 +94,22 @@ export function reply(d,text,day,modules,thread={}){
   return {text:'请选一个已列出的候选，或输入“榜样改为 人物/作品 https://公开来源”。陌生参照只保存为待核查，不会凭名字生成数值差距。'};
  }
  if(d.scope==='gap'&&d.item==='rubric')return {text:'这份评分量表是演示口径。请说明你重视的目标或哪项证据不合适，可用“补充背景：…”记录偏好，再单独调整目标或现状。我不会把权重意见误记成基线数值。'};
- if(m&&['gap','metric'].includes(d.scope)){
+ if(m&&(['gap','metric'].includes(d.scope)||['assessment','proposal'].includes(d.scope)&&d.item==='self'&&working.benchmark?.kind==='numeric')){
   const x=working.metrics.find(x=>x.id===d.item)||working.metrics.find(x=>x.id===working.benchmark?.metricId)||working.metrics[0];
   const named=working.metrics.find(y=>text.includes(y.name));if(named&&named.id!==x.id)return {text:`这里正在讨论「${x.name}」，请从「${named.name}」旁的入口更正该项，避免修改错对象。`};
   const unknown=/未知|不可比|不确定/.test(text);const number=text.match(/(?:改为|为|是|：|:)\s*(\d+(?:\.\d+)?)(?::(\d{2}):(\d{2}))?/);
   if(unknown||number){let value=unknown?null:number[2]!==undefined?Number(number[1])*3600+Number(number[2])*60+Number(number[3]):Number(number[1]);
-   if(!unknown&&(!Number.isFinite(value)||value<0||value>1e7||number[2]!==undefined&&(x.unit!=='秒'||Number(number[2])>=60||Number(number[3])>=60)))throw Error('请核对数值；时间使用 H:MM:SS，其余指标使用同口径非负数。');
-   if(!unknown&&x.unit==='秒'&&number[2]===undefined)throw Error('成绩请使用 H:MM:SS，避免把小时、分钟误当秒。');
+   if(!unknown&&(!Number.isFinite(value)||value<0||value>1e7||x.unit==='秒'&&value===0||number[2]!==undefined&&(x.unit!=='秒'||Number(number[2])>=60||Number(number[3])>=60)))throw Error('请核对数值；时间使用 H:MM:SS，其余指标使用同口径非负数。');
+   if(!unknown&&x.timeFormat==='seconds'&&number[2]!==undefined)throw Error('百米计时请使用秒，例如 19.16秒。');
+   if(!unknown&&x.unit==='秒'&&x.timeFormat!=='seconds'&&number[2]===undefined)throw Error('成绩请使用 H:MM:SS，避免把小时、分钟误当秒。');
    if(x.taskId&&value!==null&&value>=x.target)return {text:'这项涉及完整能力，个人自述先保留为背景。请在已安排挑战中提供产物并单独验收；我不会通过修改基线直接解锁能力。'};
    const metrics=working.metrics.map(y=>y.id===x.id?{...y,value,evidence:`本人更正（待核验）：${text}`,updated:'2026-10-02'}:y);
    if(score(working,day).metrics.find(y=>y.id===x.id).fromRecord)return {text:'当前这一项来自模拟验收记录，修改基线不能覆盖验收。请在“完成判断”处讨论撤回能力验收，再补充新的资料。'};
    return modulePatch({metrics,assessment:null,updated:'2026-10-02'},`${x.name}：${formatValue(x.value,x.unit)} · ${gap(working,day).headline}`,`${x.name}：${formatValue(value,x.unit)} · ${gap({...working,metrics},day).headline}`);
   }
-  return {text:`你在讨论「${x.name}」。可以说“${x.name}改为 ${x.unit==='秒'?'4:10:00':'2'}”或“${x.name}未知”。当前证据来源可继续核查；不把不同口径硬算成差距。`};
+  return {text:`你在讨论「${x.name}」。可以说“${x.name}改为 ${x.timeFormat==='seconds'?'19.16秒':x.unit==='秒'?'4:10:00':'2'}”或“${x.name}未知”。当前证据来源可继续核查；不把不同口径硬算成差距。`};
  }
+ if(d.scope==='assessment')return {text:'请指出具体证据或口径问题。可说“重新评估”，或用真实的同口径成绩更正基线；作品能力请从对应分项补证据。直接要求改分或升级境界不会被当作掌握证据。',proposal:pending};
  if(m){
   const goal=text.match(/^目标改为[：:\s]*(.+)/s),stage=text.match(/^(近期|中期|长期)(?:计划)?改为[：:\s]*(.+)/s),standard=text.match(/^验收改为[：:\s]*(.+)/s);
   if(goal)return modulePatch({goal:goal[1].slice(0,180),assessment:null},working.goal,goal[1].slice(0,180));
@@ -121,9 +141,9 @@ export function applyFeedback(p,day,modules){
 }
 export function undoFeedback(undo,day,modules){
  if(!undo||undo.version!==versions(day,modules))throw Error('确认后又发生了其他变更，不能覆盖新资料。请重新讨论要恢复的内容。');
- const previousDay=structuredClone(undo.day),previousModules=structuredClone(undo.modules);previousDay.messages=structuredClone(day.messages);previousModules.forEach(m=>m.messages=structuredClone(modules.find(x=>x.id===m.id)?.messages||m.messages));previousDay.revision=day.revision+1;previousDay.personal.revision=(day.personal?.revision||0)+1;previousModules.forEach(m=>m.revision=(modules.find(x=>x.id===m.id)?.revision||0)+1);previousDay.notice='已撤销这次协商修订；旧提案需要重新确认。';return {day:previousDay,modules:previousModules};
+ const previousDay=structuredClone(undo.day),previousModules=structuredClone(undo.modules);previousDay.messages=structuredClone(day.messages);previousModules.forEach(m=>{const current=modules.find(x=>x.id===m.id);m.messages=structuredClone(current?.messages||m.messages);m.assessmentMode=current?.assessmentMode;});previousDay.revision=day.revision+1;previousDay.personal.revision=(day.personal?.revision||0)+1;previousModules.forEach(m=>m.revision=(modules.find(x=>x.id===m.id)?.revision||0)+1);previousDay.notice='已撤销这次协商修订；旧提案需要重新确认。';return {day:previousDay,modules:previousModules};
 }
 export function feedbackDialog(d,day,modules,thread){
  const c=checkpoint(d,day,modules),p=thread.proposal,stale=p&&p.base!==c.version,agreed=thread.agreement===c.version;
- return `<dialog id="feedback-dialog" aria-labelledby="feedback-title"><div class="feedback-header"><div><span class="advisor-role">就这条内容，与 Jarvis 一起判断</span><h2 id="feedback-title">${esc(c.label)}</h2></div><button type="button" class="btn" data-feedback-control="close" aria-label="关闭讨论">关闭</button></div><div class="feedback-body"><section class="feedback-object"><strong>当前内容</strong><p>${esc(c.content)}</p><details data-keep="feedback-basis"><summary>这条内容的依据与边界</summary><p>${esc(c.basis)}</p></details></section><div class="feedback-history" role="log" aria-label="这条内容的协商记录">${thread.messages.map(msg=>`<div class="feedback-message ${msg.role}"><small>${msg.role==='user'?'你':'Jarvis · 本地模拟'}</small><p>${esc(msg.text)}</p></div>`).join('')||'<p class="feedback-empty">哪里不符合你的实际情况？从这里反馈，对话会始终带着这条内容。</p>'}</div>${p?`<section class="feedback-proposal"><h3>待确认修订</h3><div class="feedback-diff"><div><strong>修改前</strong><p>${esc(p.before)}</p></div><div><strong>修改后</strong><p>${esc(p.after)}</p></div></div>${stale?'<p class="inline-error">这份提案已过期。请基于当前内容重新发送修改。</p>':''}<p>任务证据、行动 XP 与固定安排沿用现有规则。还不合适，可以在下面继续修改。</p><div class="actions"><button class="btn primary" data-feedback-control="confirm" ${stale?'disabled':''}>确认这份修订</button><button class="btn" data-feedback-control="reject">暂不采用</button></div></section>`:''}${thread.error?`<p class="inline-error" role="alert">${esc(thread.error)}</p>`:''}${agreed?'<p class="feedback-agreement" role="status">已达成一致 · 你确认了当前版本</p>':thread.agreement?'<p class="feedback-empty">原先的共识对应旧版本，需要重新复核。</p>':''}${thread.undo?`<button class="feedback-link" data-feedback-control="undo" ${thread.undo.version!==c.version?'disabled':''}>撤销这次修订</button>`:''}</div><div class="feedback-compose"><div class="feedback-chips">${c.tips.map(t=>`<button type="button" data-feedback-prompt="${esc(t)}">${esc(t)}</button>`).join('')}</div><form id="feedback-form"><label class="field" for="feedback-message">反馈或继续修改<textarea id="feedback-message" maxlength="2000" required placeholder="指出不准确的前提，给出你的限制，或提出更合适的方案…">${esc(thread.draft||'')}</textarea></label><div class="composer-footer"><span>只讨论当前内容 · Ctrl / ⌘ + Enter 发送</span><button class="btn primary" type="submit">发送反馈</button></div></form>${!p?'<button class="feedback-link" data-feedback-control="agree">认可当前判断，达成一致</button>':''}<p class="mode-note">本地有限规则模拟，尚未接入真实模型。自由反馈会保留；无法理解时会澄清。共识不代表缺失事实已被验证。刷新清空。</p></div></dialog>`;
+ return `<dialog id="feedback-dialog" aria-labelledby="feedback-title"><div class="feedback-header"><div><span class="advisor-role">就这条内容，与 Jarvis 一起判断</span><h2 id="feedback-title">${esc(c.label)}</h2></div><button type="button" class="btn" data-feedback-control="close" aria-label="关闭讨论">关闭</button></div><div class="feedback-body"><section class="feedback-object"><strong>当前内容</strong><p>${esc(c.content)}</p><details data-keep="feedback-basis"><summary>这条内容的依据与边界</summary><p>${esc(c.basis)}</p></details>${d.scope==='benchmark'||d.scope==='reference-source'||d.scope==='assessment'&&d.item==='reference'?`<button type="button" class="btn" data-mod="edit-reference" data-mid="${esc(d.mid)}">补充 / 编辑榜样资料</button>`:''}</section><div class="feedback-history" role="log" aria-label="这条内容的协商记录">${thread.messages.map(msg=>`<div class="feedback-message ${msg.role}"><small>${msg.role==='user'?'你':'Jarvis · 本地模拟'}</small><p>${esc(msg.text)}</p></div>`).join('')||'<p class="feedback-empty">哪里不符合你的实际情况？从这里反馈，对话会始终带着这条内容。</p>'}</div>${p?`<section class="feedback-proposal"><h3>待确认修订</h3><div class="feedback-diff"><div><strong>修改前</strong><p>${esc(p.before)}</p></div><div><strong>修改后</strong><p>${esc(p.after)}</p></div></div>${stale?'<p class="inline-error">这份提案已过期。请基于当前内容重新发送修改。</p>':''}<p>任务证据、行动 XP 与固定安排沿用现有规则。还不合适，可以在下面继续修改。</p><div class="actions"><button class="btn primary" data-feedback-control="confirm" ${stale?'disabled':''}>确认这份修订</button><button class="btn" data-feedback-control="reject">暂不采用</button></div></section>`:''}${thread.error?`<p class="inline-error" role="alert">${esc(thread.error)}</p>`:''}${agreed?'<p class="feedback-agreement" role="status">已达成一致 · 你确认了当前版本</p>':thread.agreement?'<p class="feedback-empty">原先的共识对应旧版本，需要重新复核。</p>':''}${thread.undo?`<button class="feedback-link" data-feedback-control="undo" ${thread.undo.version!==c.version?'disabled':''}>撤销这次修订</button>`:''}</div><div class="feedback-compose"><div class="feedback-chips">${c.tips.map(t=>`<button type="button" data-feedback-prompt="${esc(t)}">${esc(t)}</button>`).join('')}</div><form id="feedback-form"><label class="field" for="feedback-message">反馈或继续修改<textarea id="feedback-message" maxlength="2000" required placeholder="指出不准确的前提，给出你的限制，或提出更合适的方案…">${esc(thread.draft||'')}</textarea></label><div class="composer-footer"><span>只讨论当前内容 · Ctrl / ⌘ + Enter 发送</span><button class="btn primary" type="submit">发送反馈</button></div></form>${!p?'<button class="feedback-link" data-feedback-control="agree">认可当前判断，达成一致</button>':''}<p class="mode-note">本地有限规则模拟，尚未接入真实模型。自由反馈会保留；无法理解时会澄清。共识不代表缺失事实已被验证。刷新清空。</p></div></dialog>`;
 }
